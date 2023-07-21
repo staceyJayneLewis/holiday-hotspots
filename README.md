@@ -1,5 +1,44 @@
 # HOLIDAY HOTSPOTS
 
+UX STRATEGY
+The focus of this site is to allows users to search for their next holiday destination that suits their needs by displaying information such as relevant attractions, accommodations and restaurants. It also displays information about recommended and popular holiday destinations.  
+The business goals for the site owner is to get users to choose a travel package from the site and/or from it's sponsors. The site is used to provide results in a manner that is visually appealing and user friendly so that the page doesn’t look overloaded with information but also displays the holiday destinations information well.  Why do we need a site for this? Well, with the internet being the most popular and preferred method of purchasing holidays nowadays we need to adapt to the digital way of displaying information on. 
+For who? Whats worth doing? The most important? Are we attracting somoene to buy something?
+DEFINITION - What are we creating? Websites,brochures etc
+VALUE - What value will it bring? What value do you want it to bring?
+
+
+Why would customers want to use this?
+Consumers
+How often do you go to the website.
+What do you use it for?
+What do you do before/after using the website? 
+Ask users why would they/would not use the website?
+What they like about the style/design?
+When users go to the website, where do they go first?
+What makes a good ecommerce experience?
+
+Business
+Interview people who use the website and also who wants the website
+Find out what they like/don’t like about the ideas of the website?
+What will give them the value they want?
+What facilities does it need?
+What does it compare to other websites?
+
+Is it culturally appropriate?
+Is the content relavant?
+Is it for a corporate site?
+Is it for business customers or general?
+
+Why are we special?
+Who else are doing it and how well are they doing it?
+What are other sites doing?
+What are the pros/cons of what they are doing?
+What could be better?
+What are the tech considerations?
+Is the technology appropraite?
+Do theirs look better because of better resources?
+
 <!-- ⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
 
 In this section, you will include a few paragraphs providing an overview of your project.
