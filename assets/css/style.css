@@ -5,10 +5,12 @@
     padding: 0;
 }
 
+/* Header */
 header{
     font-family:'DM Serif Text', serif;
 }
 
+/* Callout section */
 #callout{
     background-color:cornflowerblue;
     height: 90vh;
@@ -30,10 +32,39 @@ header{
     font-size: 50px;
 }
 
+/* Form */
 form label{
     font-size: 20px;
 }
 
 .btn-link{
     color:black;
+}
+
+/* Footer */
+footer {
+    background-color:cornflowerblue;
+    height: 50px;
+}
+
+.social-icons {
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding-top: 13px;
+}
+
+.social-icons li {
+    list-style:none;
+}
+
+.social-icons li i{
+    color:gold;
+}
+
+
+.social-icons li a i {
+    margin: 0 auto;
 }
