@@ -2,98 +2,100 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>Holiday Hotspots | Travel Agency</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Holiday Hotspots | Travel Agency</title>
 </head>
 
 <body>
-    <!-- Header for logo -->
+  <section id="callout">
     <header>
-        <h3>Holiday Hotspots</h3>
+      <h2>Holiday Hotspots</h2>
     </header>
     <!-- Main section with search bar -->
-    <section id="callout" class="mt-5">
-        <div id="callout-heading">
-            <h1>Explore your next dream holiday in..</h1>
+    <div id="callout-heading" class="container pt-5 pb-3">
+      <h1>Explore your next dream holiday to..</h1>
+      <form>
+        <div class="form-group pt-3">
+          <label for="country">Which country would you like to travel to?</label>
+          <input type="text" class="form-control" id="country" aria-describedby="destination"
+            placeholder="Search a country" required>
+          <small id="destination" class="form-text text-muted">*required</small>
         </div>
-        <form class="row gy-2 align-items-center">
-            <div class="col-sm-6">
-                <label for="country">Which country would you like to travel to?</label>
-                <input type="text" class="form-control" id="country" placeholder="Please enter a country" required>
-                <span class="muted">*required</span>
-            </div>
-            <div class="row">
-            <div class="col-sm-6">
-                <label for="city">What city would you want to visit?</label>
-                <input type="text" class="form-control" id="city" placeholder="Please enter a city" required>
-                <span class="muted">*required</span>
-            </div>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Search</button>
-                <button class="btn btn-secondary">Clear Search</button>
-            </div>
-        </form>
-    </section>
+        <div class="form-group pt-2">
+          <label for="city">What city would you like to visit?</label>
+          <input type="text" class="form-control" id="city" placeholder="Search a city" required>
+          <small id="destination" class="form-text text-muted">*required</small>
+        </div>
+        <button type="submit" class="btn btn-warning mt-3">Submit</button><br>
+        <button class="btn btn-link mt-3">Clear search</button>
+      </form>
+    </div>
+  </section>
 
-    <!-- Map section -->
-    <section id="map"></section>
+  <!-- Map section -->
+  <section id="map"></section>
 
-    <!-- Cards with results of destinations -->
-    <section id="destination-container" class="mt-5">
-        <h3>Popular destinations:</h3>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                </div>
-              </div>
-            </div>
+  <!-- Cards with results of destinations -->
+  <section id="destinations" class="mt-5">
+    <h3>Popular destinations:</h3>
+    <div class="container">
+    <div class="row row-cols-1 row-cols-md-3">
+      <div class="col">
+        <div class="card">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
           </div>
-    </section>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
 
-    <!-- Footer with links -->
-    <footer>
-        <ul class="social-icons">
-            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
-            <li><a href="https://twitter.com/" target="_blank" rel="noopener">Twitter</a>
-            </li>
-            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-        </ul>
-    </footer>
+  <!-- Footer with links -->
+  <footer>
+    <ul class="social-icons">
+      <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+      <li><a href="https://twitter.com/" target="_blank" rel="noopener">Twitter</a>
+      </li>
+      <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+    </ul>
+  </footer>
 
-    <!-- Bootstrap & JS script -->
-    <script></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
-    </script>
+  <!-- Bootstrap & JS script -->
+  <script></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>
