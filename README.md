@@ -1,34 +1,22 @@
 # HOLIDAY HOTSPOTS
 
 UX STRATEGY
-The focus of this site is to allows users to search for their next holiday destination that suits their needs by displaying information such as relevant attractions, accommodations and restaurants. It also displays information about recommended and popular holiday destinations.  
-The business goals for the site owner is to get users to choose a travel package from the site and/or from it's sponsors. The site is used to provide results in a manner that is visually appealing and user friendly so that the page doesn’t look overloaded with information but also displays the holiday destinations information well.  Why do we need a site for this? Well, with the internet being the most popular and preferred method of purchasing holidays nowadays we need to adapt to the digital way of displaying information on. 
-For who? Whats worth doing? The most important? Are we attracting somoene to buy something?
-DEFINITION - What are we creating? Websites,brochures etc
-VALUE - What value will it bring? What value do you want it to bring?
+The focus of this site is to allows users to search for their next holiday destination that suits their needs by displaying information such as attractions, accommodations and restaurants. The website will also display information about recommended and popular holiday destinations and packages for the users that are still undecided on where they want to go. 
+The business goals for the site owner is to get users to choose a travel package from the site and/or from it's sponsors. The site is used to provide results in a manner that is visually appealing and user friendly so that the page doesn’t look overloaded with information but also displays the holiday destinations information well.  Why do we need a site for this? Well, with the internet being the most popular and preferred method of purchasing holidays nowadays we need to adapt to the digital way of displaying information to target our audience. 
+The value a website could bring is more customers for the site owner/sponsors and convenience for the users as many customers would rather use a website to search for their holidays now and you have all the packages supplied online in one place so you can view at home and not be inconvenienced by having to find a travel agent store. 
+Who are the target audience? The site's target audience would be anyone of all ages planning a holiday and needing to search different destinations to help find what they are looking for and can refine the search by 5* hotels for example.
+What I think would be worth doing is providing the users with the most popular destinations as suggestions/recommendations for the users that are looking for ideas on somewhere different to go. It is crucial in having a search function for the user to interact with to search for their destination and reveal many results of top reviewed destinations or 5* rated hotels etc. 
 
+Why would customers want to use this website?
+For the consumers I have conducted a survey on Survey Monkey (link) to analyze consumer opinions and behaviors and based on this research it is clear that…
+This is a website users would return to and may return to numerous times depending on how many holidays they want to book or if they are undecided on a destination or looking for suitable holiday package. 
+It would even be something that the site owner uses themselves as it is applicable to everyone so the site owner would benefit from the commission on package purchases but also from being a user of the site themselves if needed.
+	- What they like about the style/design?
+	- When users go to the website, where do they go first?
+	- Ask users why would they/would not use the website?
+	- In terms of the site owner's needs we need to look at what makes a good ecommerce experience, after some independent reseach I noticed on many articles including on the travel engine website (link included in resources section) What facilities does it need? - travel packages
+	- What does it compare to other websites? - the content relavant?
 
-Why would customers want to use this?
-Consumers
-How often do you go to the website.
-What do you use it for?
-What do you do before/after using the website? 
-Ask users why would they/would not use the website?
-What they like about the style/design?
-When users go to the website, where do they go first?
-What makes a good ecommerce experience?
-
-Business
-Interview people who use the website and also who wants the website
-Find out what they like/don’t like about the ideas of the website?
-What will give them the value they want?
-What facilities does it need?
-What does it compare to other websites?
-
-Is it culturally appropriate?
-Is the content relavant?
-Is it for a corporate site?
-Is it for business customers or general?
 
 Why are we special?
 Who else are doing it and how well are they doing it?
@@ -39,7 +27,11 @@ What are the tech considerations?
 Is the technology appropraite?
 Do theirs look better because of better resources?
 
-<!-- ⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+<!-- Scope -->
+<!-- Structure -->
+![screenshot](documentation/user-journey-workflow.jpg);
+
+⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
 
 In this section, you will include a few paragraphs providing an overview of your project.
 Essentially, this part is your "sales pitch".
@@ -113,13 +105,13 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 
 ```css
 :root {
-    /* P = Primary | S = Secondary */
-    --p-text: #000000;
-    --p-highlight: #E84610;
-    --s-text: #4A4A4F;
-    --s-highlight: #009FE3;
-    --white: #FFFFFF;
-    --black: #000000;
+/* P = Primary | S = Secondary */
+--p-text: #000000;
+--p-highlight: #E84610;
+--s-text: #4A4A4F;
+--s-highlight: #009FE3;
+--white: #FFFFFF;
+--black: #000000;
 }
 ```
 
@@ -175,46 +167,14 @@ In this section, list all of your user stories for the project.
 
 ## Wireframes
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, display your wireframe screenshots using a Markdown `table`.
-
-Instructions on how to do Markdown `tables` start on line #213 on this site: https://pandao.github.io/editor.md/en.html
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
-### Home Page Wireframes
+### Website Wireframe
 
 | Size | Screenshot |
 | --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-home.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-home.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-home.png) |
-
-### About Page Wireframes
-
-| Size | Screenshot |
-| --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-about.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-about.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-about.png) |
-
-### Contact Page Wireframes
-
-| Size | Screenshot |
-| --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-contact.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-contact.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-contact.png) |
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Repeat for any addition wireframe pages you have.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+| Mobile, Tablet, Desktop (from left to right) | ![screenshot](documentation/wireframes/wireframe.jpg) |
 
 ## Features
 
@@ -392,8 +352,8 @@ Ideally, you should provide an actual link to every resource used, not just a ge
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
-| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
+| [WP travel engine](https://wptravelengine.com/must-have-features-for-travel-websites/#Our_Top_5_Features_For_Travel_Agency_Websites) | research on user strategy | "Must have features on a travel website" |
+<!-- | [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
 | [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
 | [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
 | [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
@@ -402,7 +362,7 @@ Ideally, you should provide an actual link to every resource used, not just a ge
 | [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
 | [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
 | [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
-| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily | -->
 
 ### Media
 
@@ -446,4 +406,4 @@ A few examples have been provided below to give you some ideas.
 - I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
 - I would like to thank my partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
 - I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
- -->
+
