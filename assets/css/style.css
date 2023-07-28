@@ -19,7 +19,7 @@ header{
 
 /* Callout section */
 #callout{
-    background-image: url('../assets/images/mobile-bg.jpg');
+    background: url(../images/mobile-bg.jpg);
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
