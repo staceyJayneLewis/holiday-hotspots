@@ -3,6 +3,7 @@
 *{
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 .btn {
@@ -29,7 +30,6 @@ header{
 
 #callout-heading{
     padding-top: 60px;
-    text-align:center;
 }
 
 #callout-heading h1{
@@ -51,6 +51,12 @@ form label{
 .btn-link{
     color:black;
 }
+
+/* Packages section */
+#destinations h3{
+   margin: 15px;
+}
+
 
 /* Footer */
 footer {
@@ -78,4 +84,30 @@ footer {
 
 .social-icons li a i {
     margin: 0 auto;
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    *{
+        text-align:left;
+    }
+
+    #callout{
+        background: url(../images/flamingo-bg.jpg);
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 90vh;
+    }
+
+    #callout-heading{
+        margin-left: 30px;
+    }
+
+    h3{
+        margin-left:30px;
+    }
+
+
 }
