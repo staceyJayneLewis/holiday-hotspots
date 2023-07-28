@@ -5,36 +5,47 @@
     padding: 0;
 }
 
+.btn {
+width:120px;
+}
+
 /* Header */
 header{
     font-family:'DM Serif Text', serif;
+    color:white;
+    margin-left: 1.5rem;
+    padding-top: 0.75rem;
 }
 
 /* Callout section */
 #callout{
-    background-color:cornflowerblue;
-    height: 90vh;
+    background-image: url('/assets/images/mobile-bg.jpg');
     position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 350px;
 }
 
 #callout-heading{
+    padding-top: 60px;
     text-align:center;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
 }
 
 #callout-heading h1{
     font-family:'DM Serif Text', serif;
-    font-size: 50px;
+    font-size: 41px;
+}
+
+.btn-submit{
+    background-color:#E54575;
+    color:white;
+    margin-right:8px;
 }
 
 /* Form */
 form label{
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .btn-link{
@@ -43,7 +54,7 @@ form label{
 
 /* Footer */
 footer {
-    background-color:cornflowerblue;
+    background-color:#F3B21A;
     height: 50px;
 }
 
@@ -61,7 +72,7 @@ footer {
 }
 
 .social-icons li i{
-    color:gold;
+    color:black;
 }
 
 
