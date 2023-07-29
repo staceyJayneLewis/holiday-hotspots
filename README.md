@@ -353,8 +353,8 @@ Ideally, you should provide an actual link to every resource used, not just a ge
 | --- | --- | --- |
 | [Markdown Builder](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
 | [WP travel engine](https://wptravelengine.com/must-have-features-for-travel-websites/#Our_Top_5_Features_For_Travel_Agency_Websites) | research on user strategy | "Must have features on a travel website" |
-<!-- | [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
-| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
+| [Rapid Tables](https://www.rapidtables.com/web/color/white-color.html) | btn | Used to remind me how I can add opacity to the button using rgba |
+<!-- | [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
 | [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
 | [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
 | [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
