@@ -20,12 +20,7 @@ header{
 
 /* Callout section */
 #callout{
-    background: url(../images/mobile-bg.jpg);
-    position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-bottom: 350px;
+    background-color:#F3B21A;
 }
 
 #callout-heading{
@@ -35,6 +30,10 @@ header{
 #callout-heading h1{
     font-family:'DM Serif Text', serif;
     font-size: 41px;
+}
+
+#callout img{
+    width:100%;
 }
 
 .btn-submit{
@@ -95,14 +94,19 @@ footer {
     #callout{
         background: url(../images/flamingo-bg.jpg);
         position: relative;
-        background-position: center;
+        background-position:center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size:cover;
         height: 90vh;
+        background-color:#F3B21A;
     }
 
     #callout-heading{
         margin-left: 30px;
+    }
+
+    #callout img {
+        display:none;
     }
 
     h3{
