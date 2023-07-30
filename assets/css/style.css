@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Poppins:wght@300;400;500&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Poppins:wght@300;400;500&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -55,6 +55,7 @@ header{
 
 /* Form */
 form label{
+    font-family:'Poppins' cursive;
     font-size: 18px;
     font-weight: 500;
 }
