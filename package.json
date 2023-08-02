@@ -1,0 +1,22 @@
+{
+  "name": "holiday-hotspots",
+  "version": "1.0.0",
+  "description": "UX STRATEGY The focus of this site is to allows users to search for their next holiday destination that suits their needs by displaying information such as attractions, accommodations and restaurants. The website will also display information about recommended and popular holiday destinations and packages for the users that are still undecided on where they want to go.  The business goals for the site owner is to get users to choose a travel package from the site and/or from it's sponsors. The site is used to provide results in a manner that is visually appealing and user friendly so that the page doesn’t look overloaded with information but also displays the holiday destinations information well.  Why do we need a site for this? Well, with the internet being the most popular and preferred method of purchasing holidays nowadays we need to adapt to the digital way of displaying information to target our audience.  The value a website could bring is more customers for the site owner/sponsors and convenience for the users as many customers would rather use a website to search for their holidays now and you have all the packages supplied online in one place so you can view at home and not be inconvenienced by having to find a travel agent store.  Who are the target audience? The site's target audience would be anyone of all ages planning a holiday and needing to search different destinations to help find what they are looking for and can refine the search by 5* hotels for example. What I think would be worth doing is providing the users with the most popular destinations as suggestions/recommendations for the users that are looking for ideas on somewhere different to go. It is crucial in having a search function for the user to interact with to search for their destination and reveal many results of top reviewed destinations or 5* rated hotels etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/staceyJayneLewis/holiday-hotspots.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/staceyJayneLewis/holiday-hotspots/issues"
+  },
+  "homepage": "https://github.com/staceyJayneLewis/holiday-hotspots#readme",
+  "devDependencies": {
+    "jest": "^29.6.2"
+  }
+}
