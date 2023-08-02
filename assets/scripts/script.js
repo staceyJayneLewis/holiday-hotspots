@@ -1,5 +1,4 @@
-// remember to do testing on this before anything
-function getData() {
+function getData(cb) {
   let xhr = new XMLHttpRequest();
 
   xhr.open("GET", "https://secure.geonames.org/countryInfoJSON?username=staceylewis");
@@ -7,9 +6,13 @@ function getData() {
 
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status === 200) {
-      console.log(JSON.parse(this.responseText));
+      cb(JSON.parse(this.responseText));
     }
   }
 };
 
-getData();
+function printData(data){
+  console.log(data);
+};
+
+getData(printData);
