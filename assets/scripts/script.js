@@ -11,3 +11,5 @@ function getData() {
     }
   }
 };
+
+getData();
