@@ -17,10 +17,8 @@ function getData(cb) {
 // Get country names from api data
 function getCountryName(data) {
     for (let i = 0; i < data.geonames.length; i++) {
-        return data.geonames[i];
+        return data.geonames[i].countryName;
     };
-
-
 };
 
 getData(getCountryName);
