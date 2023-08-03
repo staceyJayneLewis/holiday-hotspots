@@ -1,11 +1,6 @@
 const baseURL = "https://secure.geonames.org/countryInfoJSON?username=staceylewis";
 
-//julia - I'm trying to get to access the countryNames in the api so i can loop through the list to check
-// if it matches the user input and I have followed the CI tutorial but I can't follow it further as the api is
-// a different object structure than the api on the tutorial so its not returning the result I need. I've been checking
-// to see if Im retrieving the data by printing it do the console. 
-
-// retrieving data from api
+//XHR request to get api data
 function getData(cb) {
     var xhr = new XMLHttpRequest();
 
@@ -14,16 +9,21 @@ function getData(cb) {
 
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            cb(JSON.parse(this.responseText).geonames);
+            cb(JSON.parse(this.responseText));
         }
     };
 }
 
-function printDataToConsole(data) {
-    console.log(data);
-}
+// Get country names from api data
+function getCountryName(data) {
+    for (let i = 0; i < data.geonames.length; i++) {
+        return data.geonames[i];
+    };
 
-getData(printDataToConsole);
+
+};
+
+getData(getCountryName);
 
 
 //When search button clicked check if form is valid and get user input value
