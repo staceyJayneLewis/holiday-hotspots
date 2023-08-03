@@ -19,7 +19,8 @@
     <!-- Main section with search bar -->
     <div id="callout-heading" class="col-12 col-md-6 px-3 pb-4">
       <h1>Explore your next dream holiday to..</h1>
-      <form id="holiday-form">
+      <!-- Form input -->
+      <form id="search-form">
         <div class="form-group pt-4">
           <label for="country">Which country would you like to travel to?</label>
           <input type="text" class="form-control" id="country" aria-describedby="destination"
@@ -31,12 +32,13 @@
           <input type="text" class="form-control" id="city" placeholder="Search a city" required>
           <small id="destination" class="form-text text-muted">*required</small>
         </div>
-        <button type="submit" class="btn btn-submit">Submit</button>
+        <button type="submit" class="btn btn-submit" onclick="writeToDocument('countryName')">Submit</button>
         <button class="btn btn-outline-dark ml-3">Clear Search</button>
       </form>
     </div>
     <img src="./assets/images/mobile-flam.jpg">
   </section>
+  <div id="data"></div>
 
   <!-- Cards with results of destinations -->
   <section id="destinations" class="mt-4">
@@ -48,7 +50,7 @@
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              <p class="card-text" id="card-text1">This is a longer card with supporting text below as a natural lead-in to additional
                 content. This content is a little bit longer.</p>
             </div>
           </div>
