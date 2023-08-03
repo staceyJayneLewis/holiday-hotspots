@@ -45,15 +45,11 @@ https://ui.dev/amiresponsive?url=https://staceyjaynelewis.github.io/holiday-hots
 
 ## UX
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you will briefly explain your design processes.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ### Colour Scheme
 
-<!-- Explain your colours and the colour scheme. -->
+For the design of the page my aim is to create a design that uses the colours associated with the background image throughout the site, allowing the website design to flow and be seen as one complete consistent theme. The main colours in the callout background image are orange(#E54575), black(#212529) and shades of pink(#f7b81f), which I think compliment each other very well, as the vibrant pink and orange work well in creating the warm summer feel, but are also eye-catching for the user.
+The black and white opposite colours are then used to inform or guide the users to the information/features they are looking for such as search inputs, brand logo, headings but also to the information we want the user to be drawn to such as travel packages etc.
+The reason I selected this image was mainly due to its modern style and colours which I think create a great reflection of holidays and as part of the survey I conducted with Survey Monkey (link provided in the source) one of the questions was a choice of 2 designs with one being the background I have used with the flamingo image. The majority of users picked this image and it was interesting to see that many of the older audience also picked this image and the reasons given were that the image is modern, fun and appealing due to its colours.
 
 - `#212529` used for primary text.
 - `#E54575` used for primary buttons and cards.
@@ -67,7 +63,9 @@ I used [coolors.co](https://coolors.co/212529-e54575-f7b81f-ffffff) to generate 
 
 ### Typography
 
-<!-- Explain the fonts and why you chose -->
+As you can see below I have chosen the fonts DM Serif, Poppins and Font awesome to use social media icons. When users have a page that contains a lot of text using icons can break up the page visually for the user and this is why I chose to use icons for the footer feature of the page rather than text. 
+The DM Serif font is used for the logo and heading mainly as it is bold to make a statement and stand out but also has elegant serifs which represents the fun but sophisticated style we are looking to target the range of our audience' ages.
+Poppins has been used for the informative text in the website with a simple style so that its readable and clear for the users. 
 
 - [DM Serif](https://fonts.google.com/specimen/DM+Serif+Text?query=DM+) was used for the headers and logo.
 
@@ -132,23 +130,23 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
 
 ### Existing Features
 
-- **Title for feature #1**
+- **Logo & search bar**
 
     - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
-![screenshot](documentation/feature01.png)
+![screenshot](documentation/feature1.jpg)
 
-- **Title for feature #2**
-
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
-
-![screenshot](documentation/feature02.png)
-
-- **Title for feature #3**
+- **Background image**
 
     - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
-![screenshot](documentation/feature03.png)
+![screenshot](documentation/feature2.jpg)
+
+- **Map & footer**
+
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+
+![screenshot](documentation/feature3.jpg)
 
 
 ### Future Features
@@ -191,6 +189,7 @@ Feel free to delete any unused items below as necessary.
 - [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
 - [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
 - [Miro](https://miro.com) used to help create flow charts for the read me.
+- [TinyPNG](https://tinypng.com) used as tool for image compression.
 
 ## Testing
 
@@ -246,32 +245,21 @@ You can fork this repository by using the following steps:
 
 ### Content
 
-<!-- 
-Use this space to provide attribution links to any borrowed code snippets, elements, or resources.
-A few examples have been provided below to give you some ideas. -->
-
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
 | [WP travel engine](https://wptravelengine.com/must-have-features-for-travel-websites/#Our_Top_5_Features_For_Travel_Agency_Websites) | research on user strategy | "Must have features on a travel website" |
 | [Rapid Tables](https://www.rapidtables.com/web/color/white-color.html) | btn | Used to remind me how I can add opacity to the button using rgba |
-<!-- | [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
-| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
-| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
-| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
-| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores | -->
+| [Bootstrap](https://getbootstrap.com/documentation)
+<!-- geonames or any api's used add here -->
 
 ### Media
-
-<!-- Use this space to provide attribution links to any images, videos, or audio files borrowed from online.
-A few examples have been provided below to give you some ideas. -->
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
 | [iStock](https://www.istockphoto.com/) | entire site | image | main background image|
-| [This Person Does Not Exist](https://thispersondoesnotexist.com) | testimonials | image | headshots of fake testimonial images |
-| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
+| [googleMaps] (https://www.google.com/maps) | for map section | bottom section of the page|
+<!-- images for the cards whichever source i use add here -->
 
 ### Acknowledgements
 
