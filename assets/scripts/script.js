@@ -1,7 +1,9 @@
-const baseURL = "https://secure.geonames.org/countryInfoJSON?username=staceylewis";
+const baseCountryURL = "https://secure.geonames.org/countryInfoJSON?username=staceylewis";
+const allCountries = [];
+const allCitiesOfCountry = [];
 
 //XHR request to get api data
-function getData(cb) {
+function getData(cb, baseURL) {
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", baseURL);
@@ -13,29 +15,45 @@ function getData(cb) {
         }
     };
 }
+// Get country names from api
+function getCountryNames(data) {
+    const countryNames = data.geonames;
+    console.log(countryNames);
 
-// Get country names from api data
-function getCountryName(data) {
-    for (let i = 0; i < data.geonames.length; i++) {
-        return data.geonames[i].countryName;
-    };
-};
+    //loop through the array of countries and display the country name
+    for (let i = 0; i < countryNames.length; i++) {
+        const country = countryNames[i].countryName;
+        allCountries.push({
+            countryName: countryNames[i].countryName,
+            countryCode: countryNames[i].countryCode,
+        });
+        console.log(country);
+        console.log(allCountries);
 
-getData(getCountryName);
-
-
-//When search button clicked check if form is valid and get user input value
-document.getElementById("search-form").addEventListener("submit", function () {
-    const userInput = document.getElementById("country").value;
-
-    if (this.checkValidity()) {
-        //  check value of form input to see if matches country name in api list
-        // if name in list display names
-        // if not in list display error
-    };
-});
+    }
+}
 
 
+function getCityNames(data) {
+    console.log(data);
+    const cityNames = data.geonames;
+    console.log(cityNames);
+
+    //loop through the array of cities and display the city name
+    for (let i = 0; i < cityNames.length; i++) {
+        const city = cityNames[i].name;
+        allCitiesOfCountry.push(city);
+        console.log(city);
+        console.log(allCitiesOfCountry);
+    }
+}
+
+getData(getCountryNames, baseCountryURL);
+
+
+
+  
+  
 function locateHotels() {
     //use api to check if there are 5* hotels nearby
 }
