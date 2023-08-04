@@ -1,6 +1,4 @@
 const baseCountryURL = "https://secure.geonames.org/countryInfoJSON?username=staceylewis";
-const allCountries = [];
-const allCitiesOfCountry = [];
 
 //XHR request to get api data
 function getData(cb, baseURL) {
@@ -15,6 +13,10 @@ function getData(cb, baseURL) {
         }
     };
 }
+
+const allCountries = [];
+const allCitiesOfCountry = [];
+
 // Get country names from api
 function getCountryNames(data) {
     const countryNames = data.geonames;
@@ -29,9 +31,10 @@ function getCountryNames(data) {
         });
         console.log(country);
         console.log(allCountries);
-
-    }
-}
+    };
+    //adding options to the country select
+    document.getElementById("country").innerHTML = allCountries.map((country) => `<option value="${country.countryName}">${country.countryName}</option>`).join("");
+};
 
 function getCityNames(data) {
     console.log(data);
@@ -45,9 +48,15 @@ function getCityNames(data) {
         console.log(city);
         console.log(allCitiesOfCountry);
     }
-}
+};
 
 getData(getCountryNames, baseCountryURL);
+
+//When search button clicked check if form is valid and get user input value
+document.getElementById("country").addEventListener("change", function () {
+  
+
+});
 
 
 function locateHotels() {
