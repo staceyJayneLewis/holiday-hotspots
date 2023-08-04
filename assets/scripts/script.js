@@ -20,17 +20,18 @@ const allCitiesOfCountry = [];
 // Get country names from api
 function getCountryNames(data) {
     const countryNames = data.geonames;
-    console.log(countryNames);
+
+    allCountries.push({
+        countryName: "Select a country",
+        countryCode: "",
+    });
 
     //loop through the array of countries and display the country name
     for (let i = 0; i < countryNames.length; i++) {
-        const country = countryNames[i].countryName;
         allCountries.push({
             countryName: countryNames[i].countryName,
             countryCode: countryNames[i].countryCode,
         });
-        console.log(country);
-        console.log(allCountries);
     };
     //adding options to the country select
     document.getElementById("country").innerHTML = allCountries.map((country) => `<option value="${country.countryName}">${country.countryName}</option>`).join("");
@@ -48,28 +49,43 @@ function getCityNames(data) {
         console.log(city);
         console.log(allCitiesOfCountry);
     }
+    document.getElementById("city").innerHTML = allCitiesOfCountry.map((city) => `<option value="${city}">${city}</option>`).join("");
 };
 
 getData(getCountryNames, baseCountryURL);
 
 //When search button clicked check if form is valid and get user input value
 document.getElementById("country").addEventListener("change", function () {
-  
+    const userInputCountry = document.getElementById("country").value;
 
+    // populate the select element with options the list of countries
+    const countryCode = allCountries.find((country) => country.countryName === userInputCountry).countryCode;
+    const userInputCity = document.getElementById("city").value;
+
+    if (this.checkValidity()) {
+        // check if user input is in the array of countries
+        if (countryCode) {
+            console.log("country found");
+            baseCityUrl = 'https://secure.geonames.org/searchJSON?username=staceylewis&country=' + countryCode + '&maxRows=1000&style=SHORT';
+            getData(getCityNames, baseCityUrl);
+        } else {
+            console.log("country not found");
+        }
+        if (userInputCity === "") {
+            console.log("please enter a city");
+        }
+    };
 });
 
-
+//On submit get city value and find 5* hotels in the selected city
+//use api to check if there are 5* hotels nearby
 function locateHotels() {
-    //use api to check if there are 5* hotels nearby
+
 }
+
 
 function displayMessage() {
     //if no 5*hotels in the city display error message 'no 5* hotels in the city'
     //if there are more than 10 results add 'load more' button
     //if no more results show message 'no more results'
 }
-
-function clearSearch() {
-    //clear inputs ready for new search
-}
-
