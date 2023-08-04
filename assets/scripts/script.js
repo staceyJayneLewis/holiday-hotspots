@@ -33,7 +33,6 @@ function getCountryNames(data) {
     }
 }
 
-
 function getCityNames(data) {
     console.log(data);
     const cityNames = data.geonames;
@@ -51,9 +50,6 @@ function getCityNames(data) {
 getData(getCountryNames, baseCountryURL);
 
 
-
-  
-  
 function locateHotels() {
     //use api to check if there are 5* hotels nearby
 }
