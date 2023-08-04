@@ -83,6 +83,10 @@ function locateHotels() {
 
 }
 
+document.getElementById('clear-search').onclick = (function () {
+    userInputCountry = document.getElementById("country").value = "";
+    userInputCity = document.getElementById("city").value = "";
+});
 
 function displayMessage() {
     //if no 5*hotels in the city display error message 'no 5* hotels in the city'
