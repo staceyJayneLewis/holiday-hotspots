@@ -42,6 +42,8 @@ function getCityNames(data) {
     const cityNames = data.geonames;
     console.log(cityNames);
 
+    allCitiesOfCountry.push('Select a city');
+
     //loop through the array of cities and display the city name
     for (let i = 0; i < cityNames.length; i++) {
         const city = cityNames[i].name;
@@ -77,12 +79,6 @@ document.getElementById("country").addEventListener("change", function () {
     };
 });
 
-//On submit get city value and find 5* hotels in the selected city
-//use api to check if there are 5* hotels nearby
-function locateHotels() {
-
-}
-
 document.getElementById('clear-search').onclick = (function () {
     userInputCountry = document.getElementById("country").value = "";
     userInputCity = document.getElementById("city").value = "";
@@ -92,4 +88,10 @@ function displayMessage() {
     //if no 5*hotels in the city display error message 'no 5* hotels in the city'
     //if there are more than 10 results add 'load more' button
     //if no more results show message 'no more results'
+}
+
+//On submit get city value and find 5* hotels in the selected city
+//use api to check if there are 5* hotels nearby
+function locateHotels() {
+
 }
