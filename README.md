@@ -24,7 +24,7 @@ What are other sites doing?
 What are the pros/cons of what they are doing?
 What could be better?
 What are the tech considerations?
-Is the technology appropraite?
+Is the technology appropraite? mention api key that will be hidden 
 Do theirs look better because of better resources?
 
 <!-- Scope -->
@@ -113,70 +113,38 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ## Features
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you should go over the different parts of your project,
-and describe each in a sentence or so.
-
-You will need to explain what value each of the features provides for the user,
-focusing on who this website is for, what it is that they want to achieve,
-and how your project is the best way to help them achieve these things.
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-IMPORTANT: Remember to always include a screenshot of each individual feature!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ### Existing Features
 
-- **Logo & search bar**
+- **Logo & search bar/form**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - For the logo as mentioned in the typography section I have chosen the DM Serif font for the logo because I wanted a simple bold text logo so it does not take the users attention away from the page too much but is also readable for all ages. The value the logo will bring is the representation of the company with the simple text with a touch of elegant serifs to represent the luxury in the holidays.
+    - The form is integral to the site as it allows the users to interact with it to achieve the results they are looking for which are the requested holiday packages that relates to their chosen city destination. The form is a simple format that has two inputs to firstly select their choice of country and then bring a pre populated list of the countries cities, making it user friendly as we bring the information to them depending on users choices. The form is also full reponsive so its compatible on most device sizes meaning it can be widely accessed. 
 
 ![screenshot](documentation/feature1.jpg)
 
 - **Background image**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - The background image is for aesthetic to make the website look visually appealing and fun. When users are seaching for holidays they are usually excited and happy, so the background image used is bright, fun and colourful to match the users feelings when they visit. The value a good designed site can bring is a good impression and returning customers due to it's memorable design and so the effective use of colour and imagery is important on the callout.
 
 ![screenshot](documentation/feature2.jpg)
 
 - **Map & footer**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - The value and purpose of the footer holds the links to any social media pages or contact information which can increase following on social media or direct users easily contact information if they have any queries. I have used the orange/yellow colour from the callout page background image on the footer so the colour scheme carries through the website but it works very well as it gives a highlighted effect making it noticeable for users.
 
 ![screenshot](documentation/feature3.jpg)
 
 
 ### Future Features
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Do you have additional ideas that you'd like to include on your project in the future?
-Fantastic! List them here!
-It's always great to have plans for future improvements!
-Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- Title for future feature #1
-    - Any additional notes about this feature.
-- Title for future feature #2
-    - Any additional notes about this feature.
-- Title for future feature #3
-    - Any additional notes about this feature.
+- Add a refine option #1
+    - Give more options to the customers of defining what they are looking for e.g attractions, museums, restaurants etc. Maybe this could just be simply another dropdown with the options. 
+- Testimonials #2
+    - Add customer reviews option on the cards so that users can see first hand reviews of the generated hotels.
+- Contact Page #3
+    - A contact page would be useful so we can include an email option to email us with any queries to make the site for user friendly as they will not have to leave our site to go to an external sites such a gmail if they want to email us with a query. This also gives customers another simple contact method as not all users like to call for information.
 
 ## Tools & Technologies Used
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you should explain the various tools and technologies used to develop the project.
-Make sure to put a link (where applicable) to the source, and explain what each was used for.
-Some examples have been provided, but this is just a sample only, your project might've used others.
-Feel free to delete any unused items below as necessary.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
@@ -190,6 +158,8 @@ Feel free to delete any unused items below as necessary.
 - [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
 - [Miro](https://miro.com) used to help create flow charts for the read me.
 - [TinyPNG](https://tinypng.com) used as tool for image compression.
+- [geonames](http://www.geonames.org/) used for one of the api's used to get the country and city data.
+- [amadeus](https://amadeus.com/en/topic/api) used for the api to get search results information on hotels.
 
 ## Testing
 
@@ -251,19 +221,20 @@ You can fork this repository by using the following steps:
 | [WP travel engine](https://wptravelengine.com/must-have-features-for-travel-websites/#Our_Top_5_Features_For_Travel_Agency_Websites) | research on user strategy | "Must have features on a travel website" |
 | [Rapid Tables](https://www.rapidtables.com/web/color/white-color.html) | btn | Used to remind me how I can add opacity to the button using rgba |
 | [Bootstrap](https://getbootstrap.com/documentation)
-<!-- geonames or any api's used add here -->
+| [geonames](http://www.geonames.org/) | Search Input | used to get the country and city data.
+| [amadeus](https://amadeus.com/en/topic/api) | card results | used for the api to get search results information on hotels |
 
 ### Media
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [iStock](https://www.istockphoto.com/) | entire site | image | main background image|
-| [googleMaps] (https://www.google.com/maps) | for map section | bottom section of the page|
+| [iStock](https://www.istockphoto.com/) | entire site | image | main background image |
+| [googleMaps] (https://www.google.com/maps) | for map section | bottom section of the page |
 <!-- images for the cards whichever source i use add here -->
 
 ### Acknowledgements
 
-- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for their support throughout the development of this project.
+- I would like to thank my Code Institute mentor, [Juliia Konovalova](https://github.com/IuliiaKonovalova) for their support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
 - I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
 - I would like to thank my partner William, for believing in me, and allowing me to make this transition into software development and my daughter for being so patient in having less time with me due to sharing my time with doing this course.
