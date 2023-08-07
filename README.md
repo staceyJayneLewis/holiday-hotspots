@@ -1,49 +1,22 @@
 # HOLIDAY HOTSPOTS
 
-UX STRATEGY
-The focus of this site is to allows users to search for their next holiday destination that suits their needs by displaying information such as attractions, accommodations and restaurants. The website will also display information about recommended and popular holiday destinations and packages for the users that are still undecided on where they want to go. 
-The business goals for the site owner is to get users to choose a travel package from the site and/or from it's sponsors. The site is used to provide results in a manner that is visually appealing and user friendly so that the page doesn’t look overloaded with information but also displays the holiday destinations information well.  Why do we need a site for this? Well, with the internet being the most popular and preferred method of purchasing holidays nowadays we need to adapt to the digital way of displaying information to target our audience. 
-The value a website could bring is more customers for the site owner/sponsors and convenience for the users as many customers would rather use a website to search for their holidays now and you have all the packages supplied online in one place so you can view at home and not be inconvenienced by having to find a travel agent store. 
-Who are the target audience? The site's target audience would be anyone of all ages planning a holiday and needing to search different destinations to help find what they are looking for and can refine the search by 5* hotels for example.
-What I think would be worth doing is providing the users with the most popular destinations as suggestions/recommendations for the users that are looking for ideas on somewhere different to go. It is crucial in having a search function for the user to interact with to search for their destination and reveal many results of top reviewed destinations or 5* rated hotels etc. 
+Holiday Hotspots is a website where users can search for their next holiday destination and will display a range of hotels depending on which country and city chosen. It has a search form and a result section which displays the results of hotels based on the the information user inputs. Also, it displays information about recommended and popular holiday destinations and packages for the users that are still undecided on where they want to go.
 
-Why would customers want to use this website?
-For the consumers I have conducted a survey on Survey Monkey (link) to analyze consumer opinions and behaviors and based on this research it is clear that…
-This is a website users would return to and may return to numerous times depending on how many holidays they want to book or if they are undecided on a destination or looking for suitable holiday package. 
-It would even be something that the site owner uses themselves as it is applicable to everyone so the site owner would benefit from the commission on package purchases but also from being a user of the site themselves if needed.
-	- What they like about the style/design?
-	- When users go to the website, where do they go first?
-	- Ask users why would they/would not use the website?
-	- In terms of the site owner's needs we need to look at what makes a good ecommerce experience, after some independent reseach I noticed on many articles including on the travel engine website (link included in resources section) What facilities does it need? - travel packages
-	- What does it compare to other websites? - the content relavant?
+The business goals for the site owner is to get users to choose a travel package from the site and/or from it's sponsors. The site is used to provide results in a manner that is visually appealing and user friendly so that the page doesn’t look overloaded with information but also clearly displays information on the holiday destinations. Why do we need a site for this? Well, with the internet being the most popular and preferred method of purchasing holidays nowadays we need to adapt to the digital way of displaying information to target our audience.
 
+Who are the target audience? The site's target audience would be anyone of all ages planning a holiday and needing to search different destinations to help find what they are looking for. How was this achieved? This was achieved by having a search function for the user to interact with to search for their destination and reveal many results of 5* rated hotels. Also, when users visit the website they will be welcomed with the most popular destinations as suggestions/recommendations for ideas on somewhere different to go. Also, as this website is to target a wide audience the website is responsive to most devices from mobiles to computers which means it caters for all generations no matter what preferred device is used.
 
-Why are we special?
-Who else are doing it and how well are they doing it?
-What are other sites doing?
-What are the pros/cons of what they are doing?
-What could be better?
-What are the tech considerations?
-Is the technology appropraite? mention api key that will be hidden 
-Do theirs look better because of better resources?
+The value a website could bring is more customers for the site owner/sponsors and convenience for the users as many customers would rather use a website to search for their holidays now and this also reflected in the survey I did on Survey Monkey (link in sources) to analyze consumer opinions and behaviors and based on this research it is clear that most poeople would rather book holidays online than instore. Again, this is convenient for the users as you have all the packages supplied online in one place so you can view at home and not be inconvenienced by having to find a travel agent store.
 
-<!-- Scope -->
-<!-- Structure -->
 ![screenshot](documentation/user-journey-workflow.jpg);
-
-<!-- In this section, you will include a few paragraphs providing an overview of your project.
-Essentially, this part is your "sales pitch".
-
-At this stage, you should have a name for your project so use it!
-Don't introduce the project as a "portfolio project" for the diploma.
-
-In this section, describe what the project hopes to accomplish, who it is intended to target, and how it will be useful to the target audience. -->
 
 https://ui.dev/amiresponsive?url=https://staceyjaynelewis.github.io/holiday-hotspots
 
 ![screenshot](documentation/mockup.jpg)
 
 ## UX
+
+Holiday Hotspots was created as a simple one page interactive website making it user-friendly and simple to use as it has a wide age range for target audience. The users are given a selection of hotels based on their choice of country and city chosen whilst interacting with the site. The website has been designed in a simple linear structure so that it can be easily developed further in the future and has the potential to add many more features to it without the site looking overcrowded. Its a simple journey to achieve what users are looking for with just 2 inputs to narrow their search and 1 submit button making it easy to use and not take too many clicks to get what they want and content hinting has been implemented in the design to show users can scroll down for more content. 
 
 ### Colour Scheme
 
@@ -78,27 +51,24 @@ Poppins has been used for the informative text in the website with a simple styl
 
 ### New Site Users
 
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
+- As a first time visitor, I want to easily understand how to get the results I want.
+- As a first time visitor, I want to be able to easily navigate through the website, so I can find the content.
+- As a first time visitor, I want to see a simple site that is clearly easily to use.
+- As a first time visitor, I want to be able to see my chosen destination on a map. 
 
 ### Returning Site Users
 
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
+- As a returning visitor, I want to be able to pick which hotel I like.
+- As a returning visitor, I want to see information about the hotels, so that I can make a decision.
+- As a returning visitor, I want to be able to find links to the companies social media or contact number so I can contact with  
+  any questions I may have.
+- As a returning visitor 
 
 ### Site Admin
 
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
+- As a site administrator, I should be able to easily add new features to the website, so that I can renew content.
+- As a site administrator, I should be able to see a well structured script with comments, so that I can easily identify each section in the script. 
+- As a site administrator, I should be able to easily update the social media links and contact information, so that I can 
 
 ## Wireframes
 
@@ -127,6 +97,12 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
     - The background image is for aesthetic to make the website look visually appealing and fun. When users are seaching for holidays they are usually excited and happy, so the background image used is bright, fun and colourful to match the users feelings when they visit. The value a good designed site can bring is a good impression and returning customers due to it's memorable design and so the effective use of colour and imagery is important on the callout.
 
 ![screenshot](documentation/feature2.jpg)
+
+- **Destination cards**
+
+    - Simple cards designed to be easily readible and a simple button which can load more cards with more hotel results or guide users back to the top of the page to consider user experience and usability.
+
+    <!-- place screenshot of cards here once done -->
 
 - **Map & footer**
 
