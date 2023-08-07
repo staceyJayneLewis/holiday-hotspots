@@ -1,4 +1,6 @@
 const baseCountryURL = "https://secure.geonames.org/countryInfoJSON?username=staceylewis";
+const apiKey = "wGJuUulJvwhdYGEVjJZpGOZk87efZApG";
+const apiSecret = "6Zw2nbDOVPrXjGAS";
 
 //XHR request to get api data
 function getData(cb, baseURL) {
@@ -60,7 +62,7 @@ getData(getCountryNames, baseCountryURL);
 document.getElementById("country").addEventListener("change", function () {
     const userInputCountry = document.getElementById("country").value;
 
-    // populate the select element with options the list of countries
+    // populate the select element with options
     const countryCode = allCountries.find((country) => country.countryName === userInputCountry).countryCode;
     const userInputCity = document.getElementById("city").value;
 
@@ -79,10 +81,43 @@ document.getElementById("country").addEventListener("change", function () {
     };
 });
 
+//clear search button actions
 document.getElementById('clear-search').onclick = (function () {
     userInputCountry = document.getElementById("country").value = "";
     userInputCity = document.getElementById("city").value = "";
 });
+
+
+// get token for amadeus api
+const obtainToken = async () => {
+    const amadeusUrl = "https://test.api.amadeus.com/v1/security/oauth2/token";
+    const amadeusHeaders = {
+        "Content-Type": "application/x-www-form-urlencoded",
+    };
+    const amadeusBody = `grant_type=client_credentials&client_id=${apiKey}&client_secret=${apiSecret}`;
+    const amadeusResponse = await fetch(amadeusUrl, {
+        method: "POST",
+        headers: amadeusHeaders,
+        body: amadeusBody,
+    });
+    const amadeusData = await amadeusResponse.json();
+    return amadeusData.access_token;
+};
+
+// get nearby hotels
+const hotelContent = async () => {
+    const amadeusUrl = `https://test.api.amadeus.com/v3//reference-data/locations/hotels/by-city?cityCode=${PAR}`;
+    const amadeusHeaders = {
+        "Authorization": `Bearer ${await obtainToken()}`,
+    };
+    const amadeusResponse = await fetch(amadeusUrl, {
+        method: "GET",
+        headers: amadeusHeaders,
+    });
+    const amadeusData = await amadeusResponse.json();
+    return amadeusData.data;
+};
+
 
 function displayMessage() {
     //if no 5*hotels in the city display error message 'no 5* hotels in the city'
