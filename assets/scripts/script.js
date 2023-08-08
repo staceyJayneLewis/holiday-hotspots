@@ -2,11 +2,10 @@ const baseCountryURL = "https://secure.geonames.org/countryInfoJSON?username=sta
 
 const apiKey = "wGJuUulJvwhdYGEVjJZpGOZk87efZApG";
 const apiSecret = "6Zw2nbDOVPrXjGAS";
+const coordinatesKey = "ty4jRD5/f8qUdfROqXXTXQ==QCh68o9Hn09KmaV8";
 
-const cityCodeApiKey = "ty4jRD5/f8qUdfROqXXTXQ==QCh68o9Hn09KmaV8";
-
-let cityCode;
-let userInputCity;
+let longitude;
+let latitude;
 
 //XHR request to get api data
 function getData(cb, baseURL) {
@@ -21,6 +20,7 @@ function getData(cb, baseURL) {
         }
     };
 }
+
 
 const allCountries = [];
 const allCitiesOfCountry = [];
@@ -45,6 +45,7 @@ function getCountryNames(data) {
     document.getElementById("country").innerHTML = allCountries.map((country) => `<option value="${country.countryName}">${country.countryName}</option>`).join("");
 };
 
+
 function getCityNames(data) {
     console.log(data);
     const cityNames = data.geonames;
@@ -62,7 +63,6 @@ function getCityNames(data) {
     document.getElementById("city").innerHTML = allCitiesOfCountry.map((city) => `<option value="${city}">${city}</option>`).join("");
 };
 
-getData(getCountryNames, baseCountryURL);
 
 //When search button clicked check if form is valid and get user input value
 document.getElementById("country").addEventListener("change", function () {
@@ -87,32 +87,24 @@ document.getElementById("country").addEventListener("change", function () {
     };
 });
 
-//get city code from api ninja
-const getCityCode = async (city) => {
-    const cityCodeUrl = `https://api.api-ninjas.com/v1/airports?name=${city}`;
 
-    const cityCodeHeaders = {
-        "X-Api-Key": cityCodeApiKey,
+// get latitude and longitude from api ninja using city name
+const getCoordinates = async (city) => {
+    const coordinatesUrl = `https://api.api-ninjas.com/v1/city?name=${city}`;
+    const coordinatesHeaders = {
+        "X-Api-Key": coordinatesKey,
     };
-    
-    const cityResponse = await fetch(cityCodeUrl, {
-      method: "GET",
-      headers: cityCodeHeaders,
+    const coordinatesResponse = await fetch(coordinatesUrl, {
+        method: "GET",
+        headers: coordinatesHeaders,
     });
-    const cityCodeData = await cityResponse.json();
+    const coordinates = await coordinatesResponse.json();
+    // convert to integer
+    latitude = coordinates[0].latitude;
+    longitude = coordinates[0].longitude;
+    return coordinates;
+};
 
-    cityCode = cityCodeData[0].iata;
-    return cityCodeData;
-    //for loop needed to retrieve iata code
-  };
-
-  getCityCode('paris');
-
-//clear search button actions
-document.getElementById('clear-search').onclick = (function () {
-    userInputCountry = document.getElementById("country").value = "";
-    userInputCity = document.getElementById("city").value = "";
-});
 
 // get token for amadeus api
 const obtainToken = async () => {
@@ -130,17 +122,11 @@ const obtainToken = async () => {
     return amadeusData.access_token;
 };
 
-// // get nearby hotels
-// const hotelContent = async () => {
-//     const amadeusUrl = `https://test.api.amadeus.com/v3//reference-data/locations/hotels/by-city?cityCode=${PAR}`;
-//     const amadeusHeaders = {
-//         "Authorization": `Bearer ${await obtainToken()}`,
-//     };
-//     const amadeusResponse = await fetch(amadeusUrl, {
-//         method: "GET",
-//         headers: amadeusHeaders,
-//     });
-//     const amadeusData = await amadeusResponse.json();
-//     return amadeusData.data;
-// };
+
+//clear search button actions
+document.getElementById('clear-search').onclick = (function () {
+    userInputCountry = document.getElementById("country").value = "";
+    userInputCity = document.getElementById("city").value = "";
+});
+  
 
