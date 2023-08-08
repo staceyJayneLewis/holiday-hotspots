@@ -1,6 +1,12 @@
 const baseCountryURL = "https://secure.geonames.org/countryInfoJSON?username=staceylewis";
+
 const apiKey = "wGJuUulJvwhdYGEVjJZpGOZk87efZApG";
 const apiSecret = "6Zw2nbDOVPrXjGAS";
+
+const cityCodeApiKey = "ty4jRD5/f8qUdfROqXXTXQ==QCh68o9Hn09KmaV8";
+
+let cityCode;
+let userInputCity;
 
 //XHR request to get api data
 function getData(cb, baseURL) {
@@ -81,12 +87,32 @@ document.getElementById("country").addEventListener("change", function () {
     };
 });
 
+//get city code from api ninja
+const getCityCode = async (city) => {
+    const cityCodeUrl = `https://api.api-ninjas.com/v1/airports?name=${city}`;
+
+    const cityCodeHeaders = {
+        "X-Api-Key": cityCodeApiKey,
+    };
+    
+    const cityResponse = await fetch(cityCodeUrl, {
+      method: "GET",
+      headers: cityCodeHeaders,
+    });
+    const cityCodeData = await cityResponse.json();
+
+    cityCode = cityCodeData[0].iata;
+    return cityCodeData;
+    //for loop needed to retrieve iata code
+  };
+
+  getCityCode('paris');
+
 //clear search button actions
 document.getElementById('clear-search').onclick = (function () {
     userInputCountry = document.getElementById("country").value = "";
     userInputCity = document.getElementById("city").value = "";
 });
-
 
 // get token for amadeus api
 const obtainToken = async () => {
@@ -104,29 +130,17 @@ const obtainToken = async () => {
     return amadeusData.access_token;
 };
 
-// get nearby hotels
-const hotelContent = async () => {
-    const amadeusUrl = `https://test.api.amadeus.com/v3//reference-data/locations/hotels/by-city?cityCode=${PAR}`;
-    const amadeusHeaders = {
-        "Authorization": `Bearer ${await obtainToken()}`,
-    };
-    const amadeusResponse = await fetch(amadeusUrl, {
-        method: "GET",
-        headers: amadeusHeaders,
-    });
-    const amadeusData = await amadeusResponse.json();
-    return amadeusData.data;
-};
+// // get nearby hotels
+// const hotelContent = async () => {
+//     const amadeusUrl = `https://test.api.amadeus.com/v3//reference-data/locations/hotels/by-city?cityCode=${PAR}`;
+//     const amadeusHeaders = {
+//         "Authorization": `Bearer ${await obtainToken()}`,
+//     };
+//     const amadeusResponse = await fetch(amadeusUrl, {
+//         method: "GET",
+//         headers: amadeusHeaders,
+//     });
+//     const amadeusData = await amadeusResponse.json();
+//     return amadeusData.data;
+// };
 
-
-function displayMessage() {
-    //if no 5*hotels in the city display error message 'no 5* hotels in the city'
-    //if there are more than 10 results add 'load more' button
-    //if no more results show message 'no more results'
-}
-
-//On submit get city value and find 5* hotels in the selected city
-//use api to check if there are 5* hotels nearby
-function locateHotels() {
-
-}
