@@ -143,11 +143,78 @@ const attractionLocations = async (lat, long) => {
   return console.log(amadeusData.data);
 };
 
+// send fetch request to api
+const amadeusFetch = function () {
+
+  destinationResults.innerHTML = `
+  <div class="row row-cols-1 row-cols-md-3">
+  <div class="col mb-3">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text" id="card-text1">This is a longer card with supporting text below as a natural lead-in
+          to additional
+          content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-3">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+          content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-3">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+          content.</p>
+      </div>
+    </div>
+  </div>
+</div>`;
+  const city = formInput.value;
+  if (city === "") {
+    // please enter a city
+  };
+
+  // get the latitude and longitude
+  getCoordinates(city).then(() => {
+    console.log()
+
+    attractionLocations(latitude, longitude).then((data) => {
+      if (data !== undefined) {
+        destinationResults.innerHTML = "";
+
+        data.forEach((activity) => {
+          destinationResults.insertAdjacentHTML("beforeend", `<div class="card">
+        <div class="card-content">
+          <h5 class="card-title">${activity.name}</h5>
+          <p class="card-text">${activity.category}</p>
+          <a href="https://www.google.com/search?q=${activity.name}" class="btn btn-warning" target="_blank">Read More</a>
+        </div>
+      </div>`);
+        });
+      } else {
+        console.log('not working');
+        // no activities found
+      }
+    });
+  });
+};
+
+searchButton.addEventListener("click", amadeusFetch);
+
 
 //clear search button actions
 document.getElementById('clear-search').onclick = (function () {
   userInputCountry = document.getElementById("country").value = "";
   userInputCity = document.getElementById("city").value = "";
 });
-  
-
