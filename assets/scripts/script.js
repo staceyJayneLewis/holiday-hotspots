@@ -96,21 +96,10 @@ document.getElementById("country").addEventListener("change", function () {
 
 // --------------------------------------------------------
 
-// get latitude and longitude from api ninja
+// get latitude and longitude
 const getCoordinates = async (cityName) => {
-  const coordinatesUrl = `https://api.api-ninjas.com/v1/city?name=${cityName}`;
-  const coordinatesHeaders = {
-    "X-Api-Key": coordinatesKey,
-  };
-  const coordinatesResponse = await fetch(coordinatesUrl, {
-    method: "GET",
-    headers: coordinatesHeaders,
-  });
-  const coordinates = await coordinatesResponse.json();
-  // convert to integer
-  latitude = coordinates[0].latitude;
-  longitude = coordinates[0].longitude;
-  return coordinates;
+  const longitude = allCitiesOfCountry.find((city) => city.name).lng;
+  console.log(longitude);
 };
 
 // get token for amadeus api
@@ -187,7 +176,7 @@ const amadeusFetch = function () {
 
   // get the latitude and longitude
   getCoordinates(city).then(() => {
-    console.log()
+    const baseCoordsUrl = `https://secure.geonames.org/searchJSON?username=staceylewis&country=${city}&lat=${lat}&lng=${lng}`;
 
     attractionLocations(latitude, longitude).then((data) => {
       if (data !== undefined) {
