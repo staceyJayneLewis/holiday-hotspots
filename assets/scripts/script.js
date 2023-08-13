@@ -3,14 +3,10 @@ const baseCountryUrl = "https://secure.geonames.org/countryInfoJSON?username=sta
 const apiKey = "wGJuUulJvwhdYGEVjJZpGOZk87efZApG";
 const apiSecret = "6Zw2nbDOVPrXjGAS";
 
-const coordinatesKey = "ty4jRD5/f8qUdfROqXXTXQ==QCh68o9Hn09KmaV8";
-
 const formInput = document.getElementById("city");
-const searchButton = document.getElementById("submit-search");
+const searchForm = document.getElementById("search-form");
 const destinationResults = document.getElementById("destination-results");
 
-let longitude;
-let latitude;
 
 //XHR request to get api data
 function getData(cb, baseURL) {
@@ -59,16 +55,26 @@ function getCityNames(data) {
   const cityNames = data.geonames;
   console.log(cityNames);
 
-  allCitiesOfCountry.push('Select a city');
+  // allCitiesOfCountry.push('Select a city');
 
   //loop through the array of cities and display the city name
   for (let i = 0; i < cityNames.length; i++) {
     const city = cityNames[i].name;
-    allCitiesOfCountry.push(city);
+    const lng = cityNames[i].lng;
+    const lat = cityNames[i].lat;
+    console.log(city);
+    console.log(lng);
+    console.log(lat);
+    allCitiesOfCountry.push({
+      name: cityNames[i].name,
+      lng: cityNames[i].lng,
+      lat: cityNames[i].lat,
+    });
+  //   allCitiesOfCountry.push(city);
+  // }
   }
-  document.getElementById("city").innerHTML = allCitiesOfCountry.map((city) => `<option value="${city}">${city}</option>`).join("");
+  document.getElementById("city").innerHTML = allCitiesOfCountry.map((city) => `<option data-lat="${city.lat}" data-lng="${city.lng}" value="${city.name}">${city.name}</option>`).join("");
 };
-
 
 //On form change check if form is valid and get user input value
 document.getElementById("country").addEventListener("change", function () {
@@ -96,12 +102,6 @@ document.getElementById("country").addEventListener("change", function () {
 
 // --------------------------------------------------------
 
-// get latitude and longitude
-const getCoordinates = async (cityName) => {
-  const longitude = allCitiesOfCountry.find((city) => city.name).lng;
-  console.log(longitude);
-};
-
 // get token for amadeus api
 const getToken = async () => {
   const amadeusUrl = "https://test.api.amadeus.com/v1/security/oauth2/token";
@@ -118,6 +118,8 @@ const getToken = async () => {
   return amadeusData.access_token;
 };
 
+
+
 // get location of attractions
 const attractionLocations = async (lat, long) => {
   const amadeusUrl = `https://test.api.amadeus.com/v1/reference-data/shopping/activities?latitude=${lat}&longitude=${long}&radius=5`;
@@ -129,11 +131,12 @@ const attractionLocations = async (lat, long) => {
     headers: amadeusHeaders,
   });
   const amadeusData = await amadeusResponse.json();
-  return console.log(amadeusData.data);
+  return amadeusData.data;
 };
 
 // send fetch request to api
-const amadeusFetch = function () {
+const amadeusFetch = function (event) {   
+  event.preventDefault()
 
   destinationResults.innerHTML = `
   <div class="row row-cols-1 row-cols-md-3">
@@ -169,15 +172,18 @@ const amadeusFetch = function () {
     </div>
   </div>
 </div>`;
-  const city = formInput.value;
+
+  const city = event.target.city.value;
+  const latitude = event.target.city[0].dataset.lat;
+  console.log(latitude);
+  const longitude = event.target.city[0].dataset.lng;
+  console.log(longitude);
+
   if (city === "") {
     // please enter a city
   };
 
   // get the latitude and longitude
-  getCoordinates(city).then(() => {
-    const baseCoordsUrl = `https://secure.geonames.org/searchJSON?username=staceylewis&country=${city}&lat=${lat}&lng=${lng}`;
-
     attractionLocations(latitude, longitude).then((data) => {
       if (data !== undefined) {
         destinationResults.innerHTML = "";
@@ -196,10 +202,8 @@ const amadeusFetch = function () {
         // no activities found
       }
     });
-  });
-};
-
-searchButton.addEventListener("click", amadeusFetch);
+  };
+searchForm.addEventListener("submit", amadeusFetch);
 
 
 //clear search button actions
