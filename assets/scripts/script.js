@@ -3,7 +3,7 @@ const baseCountryUrl = "https://secure.geonames.org/countryInfoJSON?username=sta
 const apiKey = "wGJuUulJvwhdYGEVjJZpGOZk87efZApG";
 const apiSecret = "6Zw2nbDOVPrXjGAS";
 
-const formInput = document.getElementById("city");
+// const formInput = document.getElementById("city");
 const searchForm = document.getElementById("search-form");
 const destinationResults = document.getElementById("destination-results");
 
@@ -20,7 +20,7 @@ function getData(cb, baseURL) {
       cb(JSON.parse(this.responseText));
     }
   };
-}
+};
 
 
 const allCountries = [];
@@ -70,14 +70,12 @@ function getCityNames(data) {
       lng: cityNames[i].lng,
       lat: cityNames[i].lat,
     });
-  //   allCitiesOfCountry.push(city);
-  // }
   }
   document.getElementById("city").innerHTML = allCitiesOfCountry.map((city) => `<option data-lat="${city.lat}" data-lng="${city.lng}" value="${city.name}">${city.name}</option>`).join("");
 };
 
 //On form change check if form is valid and get user input value
-document.getElementById("country").addEventListener("change", function () {
+const formValidationCheck = document.getElementById("country").addEventListener("change", function () {
   const userInputCountry = document.getElementById("country").value;
 
   // populate the select element with options
@@ -122,7 +120,8 @@ const getToken = async () => {
 
 // get location of attractions
 const attractionLocations = async (lat, long) => {
-  const amadeusUrl = `https://test.api.amadeus.com/v1/reference-data/shopping/activities?latitude=${lat}&longitude=${long}&radius=5`;
+  
+  const amadeusUrl = `https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=${lat}&longitude=${long}&radius=5`;
   const amadeusHeaders = {
     "Authorization": `Bearer ${await getToken()}`,
   };
@@ -131,6 +130,8 @@ const attractionLocations = async (lat, long) => {
     headers: amadeusHeaders,
   });
   const amadeusData = await amadeusResponse.json();
+  console.log(amadeusData);
+  console.log(amadeusData.data);
   return amadeusData.data;
 };
 
@@ -175,7 +176,6 @@ const amadeusFetch = function (event) {
 
   const city = event.target.city.value;
   const latitude = event.target.city[0].dataset.lat;
-  console.log(latitude);
   const longitude = event.target.city[0].dataset.lng;
   console.log(longitude);
 
@@ -189,7 +189,7 @@ const amadeusFetch = function (event) {
         destinationResults.innerHTML = "";
 
         data.forEach((activity) => {
-          destinationResults.insertAdjacentHTML("beforeend", `<div class="card">
+          destinationResults.insertAdjacentHTML("beforeend", `<div class="col card">
         <div class="card-content">
           <h5 class="card-title">${activity.name}</h5>
           <p class="card-text">${activity.category}</p>
@@ -211,3 +211,5 @@ document.getElementById('clear-search').onclick = (function () {
   userInputCountry = document.getElementById("country").value = "";
   userInputCity = document.getElementById("city").value = "";
 });
+
+// module.exports = formValidationCheck;
