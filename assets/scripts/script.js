@@ -3,9 +3,9 @@ const baseCountryUrl = "https://secure.geonames.org/countryInfoJSON?username=sta
 const apiKey = "wGJuUulJvwhdYGEVjJZpGOZk87efZApG";
 const apiSecret = "6Zw2nbDOVPrXjGAS";
 
-// const formInput = document.getElementById("city");
 const searchForm = document.getElementById("search-form");
 const destinationResults = document.getElementById("destination-results");
+const destinationHeader = document.getElementById('destination-header');
 
 
 //XHR request to get api data
@@ -137,42 +137,7 @@ const attractionLocations = async (lat, long) => {
 
 // send fetch request to api
 const amadeusFetch = function (event) {   
-  event.preventDefault()
-
-  destinationResults.innerHTML = `
-  <div class="row row-cols-1 row-cols-md-3">
-  <div class="col mb-3">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text" id="card-text1">This is a longer card with supporting text below as a natural lead-in
-          to additional
-          content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col mb-3">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-          content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col mb-3">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-          content.</p>
-      </div>
-    </div>
-  </div>
-</div>`;
+  event.preventDefault();
 
   const city = event.target.city.value;
   const latitude = event.target.city[0].dataset.lat;
@@ -189,7 +154,7 @@ const amadeusFetch = function (event) {
         destinationResults.innerHTML = "";
 
         data.forEach((activity) => {
-          destinationResults.insertAdjacentHTML("beforeend", `<div class="col card">
+          destinationResults.insertAdjacentHTML("beforeend", `<div class="card col-md-4 m-3">
         <div class="card-content">
           <h5 class="card-title">${activity.name}</h5>
           <p class="card-text">${activity.category}</p>
@@ -198,18 +163,19 @@ const amadeusFetch = function (event) {
       </div>`);
         });
       } else {
-        console.log('not working');
-        // no activities found
+        console.log('no activities found');
+        // error message
       }
     });
   };
 searchForm.addEventListener("submit", amadeusFetch);
 
-
 //clear search button actions
 document.getElementById('clear-search').onclick = (function () {
   userInputCountry = document.getElementById("country").value = "";
   userInputCity = document.getElementById("city").value = "";
+  destinationHeader.innerHTML = 'Popular Destinations';
+
 });
 
 // module.exports = formValidationCheck;
