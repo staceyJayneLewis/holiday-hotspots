@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/staceyJayneLewis/holiday-hotspots#readme",
   "devDependencies": {
-    "jest": "^29.6.2"
+    "jest": "^29.6.2",
+    "jest-environment-jsdom": "^29.6.2"
   }
 }
