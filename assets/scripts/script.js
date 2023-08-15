@@ -170,6 +170,13 @@ const amadeusFetch = function (event) {
   };
 searchForm.addEventListener("submit", amadeusFetch);
 
+
+// Change header to name of city
+document.getElementById('submit-search').onclick = (function () {
+  destinationHeader.innerHTML = document.getElementById('city').value;
+});
+
+
 //clear search button actions
 document.getElementById('clear-search').onclick = (function () {
   userInputCountry = document.getElementById("country").value = "";
