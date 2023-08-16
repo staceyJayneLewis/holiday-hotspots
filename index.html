@@ -18,25 +18,26 @@
     </header>
     <!-- Main section with search bar -->
     <div id="callout-heading" class="col-12 col-md-6 px-3 pb-4">
-      <h1>Explore your next dream holiday to..</h1>
+      <h1>Explore your nearest holiday attractions in..</h1>
       <!-- Form input -->
       <form id="search-form">
-        <div class="form-group pt-4">
-          <label for="country">What country would you like to travel to?</label>
+        <p>Please scroll to see the most popular attractions or use the form below to search for attractions at a specific city.</p>
+        <div class="form-group pt-2">
+          <label for="country">Which is your country of choice?</label>
           <select name="country" id="country" class="form-control" required>
             <option value="">Select a country</option>
           </select>
           <small id="destination" class="form-text text-muted">*required</small>
         </div>
         <div class="form-group pt-4">
-          <label for="city">Select which city would you like to visit?</label>
+          <label for="city">Which city would you like to visit?</label>
           <select name="city" id="city" class="form-control" required>
             <option value="">Select a city</option>
           </select>
           <small id="destination" class="form-text text-muted">*required</small>
         </div>
-        <input type="submit" value="Submit" id="submit-search" class="btn btn-submit" />
-        <button id="clear-search" class="btn btn-outline-dark ml-3">Clear Search</button>
+        <input type="submit" value="Submit" id="submit-search" class="btn btn-submit mt-4" />
+        <button id="clear-search" class="btn btn-outline-dark ml-3 mt-4">Clear Search</button>
       </form>
     </div>
     <img src="./assets/images/mobile-flam.jpg">
@@ -46,8 +47,8 @@
   <!-- Cards with results of destinations -->
   <section id="destinations" class="mt-4">
     <h3 id="destination-header">Popular Attractions</h3>
-    <div id="destination-results" class="p-4">
-      <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5 g-3">
+    <div class="container-fluid p-4">
+      <div id="destination-results" class="row row-cols-1 row-cols-md-4 row-cols-lg-5 g-3 gy-5">
         <div class="col">
           <div class="card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Sleeping_Beauty_Castle_2019.jpg/375px-Sleeping_Beauty_Castle_2019.jpg" class="card-img-top img-fluid" alt="Disneyland America">
@@ -98,7 +99,7 @@
             </div>
           </div>
         </div>
-      </div>
+        </div>
     </div>
   </section>
 

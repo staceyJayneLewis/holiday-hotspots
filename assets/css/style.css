@@ -7,7 +7,6 @@
 
 .btn {
 width:120px;
-margin-top: 30px;
 }
 
 .btn:hover{
@@ -54,6 +53,10 @@ header{
 }
 
 /* Form */
+form p {
+    font-size: 18px;
+}
+
 form label{
     font-family:'Poppins' cursive;
     font-size: 18px;

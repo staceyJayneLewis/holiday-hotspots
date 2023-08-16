@@ -142,6 +142,7 @@ const amadeusFetch = function (event) {
   const city = event.target.city.value;
   const latitude = event.target.city[0].dataset.lat;
   const longitude = event.target.city[0].dataset.lng;
+  const clearResults = destinationResults.innerHTML = "";
   console.log(longitude);
 
   if (city === "") {
@@ -151,20 +152,25 @@ const amadeusFetch = function (event) {
   // get the latitude and longitude
     attractionLocations(latitude, longitude).then((data) => {
       if (data !== undefined) {
-        destinationResults.innerHTML = "";
 
+        clearResults;
+        
         data.forEach((activity) => {
-          destinationResults.insertAdjacentHTML("beforeend", `<div class="card col-md-4 m-3">
-        <div class="card-content">
-          <h5 class="card-title">${activity.name}</h5>
-          <p class="card-text">${activity.category}</p>
-          <a href="https://www.google.com/search?q=${activity.name}" class="btn btn-warning" target="_blank">Read More</a>
-        </div>
-      </div>`);
+          destinationResults.insertAdjacentHTML("beforeend", `<div class="col">
+          <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Sleeping_Beauty_Castle_2019.jpg/375px-Sleeping_Beauty_Castle_2019.jpg" class="card-img-top img-fluid" alt="Disneyland America">
+            <div class="card-body">
+              <h5 class="card-title">${activity.name}</h5>
+              <p class="card-text">${activity.category}</p>
+              <a href="https://www.google.co.uk/search?q=${activity.name}" class="btn btn-warning" target="_blank">Read More</a>
+            </div>
+          </div>
+        </div>`);
         });
       } else {
         console.log('no activities found');
         // error message
+        clearResults;
       }
     });
   };
