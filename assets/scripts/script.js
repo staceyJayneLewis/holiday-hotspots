@@ -3,11 +3,13 @@ const baseCountryUrl = "https://secure.geonames.org/countryInfoJSON?username=sta
 const apiKey = "wGJuUulJvwhdYGEVjJZpGOZk87efZApG";
 const apiSecret = "6Zw2nbDOVPrXjGAS";
 
-const searchForm = document.getElementById("search-form");
 const destinationResults = document.getElementById("destination-results");
 const destinationHeader = document.getElementById('destination-header');
+const destinationCards = document.getElementById('destination-results').innerHTML;
 const userInputCity = document.getElementById("city");
 const searchButton = document.getElementById('submit-search');
+const searchForm = document.getElementById("search-form");
+const cityValue = document.getElementById('city').innerHTML;
 
 
 //XHR request to get api data
@@ -25,8 +27,8 @@ function getData(cb, baseURL) {
 };
 
 
-const allCountries = [];
-const allCitiesOfCountry = [];
+let allCountries = [];
+let allCitiesOfCountry = [];
 
 // Get country names from api
 function getCountryNames(data) {
@@ -187,7 +189,11 @@ document.getElementById('clear-search').onclick = (function () {
   destinationHeader.innerHTML = 'Popular Destinations';
   document.getElementById('search-form').reset();
   searchButton.disabled = false;
-
+  destinationResults.innerHTML = destinationCards; 
+  userInputCity.innerHTML = cityValue;
+  allCitiesOfCountry = [];
+  allCountries = [];
+  getData(getCountryNames, baseCountryUrl);
 });
 
 // module.exports = formValidationCheck;
