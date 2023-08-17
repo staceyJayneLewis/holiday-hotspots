@@ -6,6 +6,8 @@ const apiSecret = "6Zw2nbDOVPrXjGAS";
 const searchForm = document.getElementById("search-form");
 const destinationResults = document.getElementById("destination-results");
 const destinationHeader = document.getElementById('destination-header');
+const userInputCity = document.getElementById("city");
+const searchButton = document.getElementById('submit-search');
 
 
 //XHR request to get api data
@@ -55,8 +57,6 @@ function getCityNames(data) {
   const cityNames = data.geonames;
   console.log(cityNames);
 
-  // allCitiesOfCountry.push('Select a city');
-
   //loop through the array of cities and display the city name
   for (let i = 0; i < cityNames.length; i++) {
     const city = cityNames[i].name;
@@ -71,6 +71,7 @@ function getCityNames(data) {
       lat: cityNames[i].lat,
     });
   }
+
   document.getElementById("city").innerHTML = allCitiesOfCountry.map((city) => `<option data-lat="${city.lat}" data-lng="${city.lng}" value="${city.name}">${city.name}</option>`).join("");
 };
 
@@ -80,7 +81,6 @@ const formValidationCheck = document.getElementById("country").addEventListener(
 
   // populate the select element with options
   const countryCode = allCountries.find((country) => country.countryName === userInputCountry).countryCode;
-  const userInputCity = document.getElementById("city").value;
 
   if (this.checkValidity()) {
     // check if user input is in the array of countries
@@ -120,7 +120,7 @@ const getToken = async () => {
 
 // get location of attractions
 const attractionLocations = async (lat, long) => {
-  
+
   const amadeusUrl = `https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=${lat}&longitude=${long}&radius=5`;
   const amadeusHeaders = {
     "Authorization": `Bearer ${await getToken()}`,
@@ -136,8 +136,12 @@ const attractionLocations = async (lat, long) => {
 };
 
 // send fetch request to api
-const amadeusFetch = function (event) {   
+const amadeusFetch = function (event) {
   event.preventDefault();
+
+  // Change header to name of city
+  destinationHeader.innerHTML = document.getElementById('city').value;
+  searchButton.disabled = true;
 
   const city = event.target.city.value;
   const latitude = event.target.city[0].dataset.lat;
@@ -150,13 +154,13 @@ const amadeusFetch = function (event) {
   };
 
   // get the latitude and longitude
-    attractionLocations(latitude, longitude).then((data) => {
-      if (data !== undefined) {
+  attractionLocations(latitude, longitude).then((data) => {
+    if (data !== undefined) {
 
-        clearResults;
-        
-        data.forEach((activity) => {
-          destinationResults.insertAdjacentHTML("beforeend", `<div class="col">
+      clearResults;
+
+      data.forEach((activity) => {
+        destinationResults.insertAdjacentHTML("beforeend", `<div class="col">
           <div class="card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Sleeping_Beauty_Castle_2019.jpg/375px-Sleeping_Beauty_Castle_2019.jpg" class="card-img-top img-fluid" alt="Disneyland America">
             <div class="card-body">
@@ -166,28 +170,23 @@ const amadeusFetch = function (event) {
             </div>
           </div>
         </div>`);
-        });
-      } else {
-        console.log('no activities found');
-        // error message
-        clearResults;
-      }
-    });
-  };
+      });
+    } else {
+      console.log('no activities found');
+      // error message
+      clearResults;
+    }
+  });
+};
+
 searchForm.addEventListener("submit", amadeusFetch);
-
-
-// Change header to name of city
-document.getElementById('submit-search').onclick = (function () {
-  destinationHeader.innerHTML = document.getElementById('city').value;
-});
 
 
 //clear search button actions
 document.getElementById('clear-search').onclick = (function () {
-  userInputCountry = document.getElementById("country").value = "";
-  userInputCity = document.getElementById("city").value = "";
   destinationHeader.innerHTML = 'Popular Destinations';
+  document.getElementById('search-form').reset();
+  searchButton.disabled = false;
 
 });
 
