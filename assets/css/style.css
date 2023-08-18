@@ -1,55 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Poppins:wght@300;400;500&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
 .btn {
-width:120px;
+    width: 120px;
 }
 
-.btn:hover{
-    background-color:rgba(255, 255, 255, 0.75);
-    border:none;
-    color:#212529;
-}
-
-/* Header */
-header{
-    font-family:'DM Serif Text', serif;
-    color:white;
-    padding-top: 0.75rem;
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    border: none;
+    color: #212529;
 }
 
 /* Callout section */
-#callout{
-    background-color:#F3B21A;
+header {
+    font-family: 'DM Serif Text', serif;
+    color: white;
+    background-color: #F3B21A;
+    font-size: 2rem;
 }
 
-#callout-heading{
-    padding-top: 60px;
+header,
+section {
+    background-color: #F3B21A;
 }
 
-#callout-heading h1{
-    font-family:'DM Serif Text', serif;
+#callout-heading h1 {
+    font-family: 'DM Serif Text', serif;
     font-size: 45px;
+    padding-top: 3rem;
 }
 
-#callout img{
-    width:100%;
+#callout img {
+    width: 100%;
 }
 
-.btn-submit{
+.btn-submit {
     border: 2px solid #E54575;
-    background-color:#E54575;
-    color:white;
-    margin-right:8px;
+    background-color: #E54575;
+    color: white;
+    margin-right: 8px;
 }
 
-.btn-outline-dark{
+.btn-outline-dark {
     border: 2px solid #212529;
-    color:#212529;
+    color: #212529;
 }
 
 /* Form */
@@ -57,53 +56,52 @@ form p {
     font-size: 18px;
 }
 
-form label{
-    font-family:'Poppins' cursive;
+form label {
+    font-family: 'Poppins'cursive;
     font-size: 18px;
     font-weight: 500;
 }
 
-form input{
+form input {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     margin-top: 5px;
 }
 
-/* Packages section */
-#destinations h3{
-   margin: 15px;
+/* Popular attractions section */
+#destinations h3 {
+    margin: 15px;
 }
 
-.card{
+.card {
     border: 1px solid #E54575;
 }
 
-.card img{
-    max-width:100%;
+.card img {
+    max-width: 100%;
     height: auto;
 }
 
-
 /* Footer */
 footer {
-    background-color:#F3B21A;
+    background-color: #F3B21A;
     height: 50px;
 }
 
 .social-icons {
     width: 100%;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     justify-content: space-evenly;
     margin: 0 auto;
     padding-top: 13px;
 }
 
 .social-icons li {
-    list-style:none;
+    list-style: none;
 }
 
-.social-icons li i{
-    color:#212529
+.social-icons li i {
+    color: #212529
 }
 
 
@@ -113,50 +111,46 @@ footer {
 
 /* Media queries */
 @media (min-width: 768px) {
-    *{
-        text-align:left;
+    * {
+        text-align: left;
     }
 
-    header{
-        margin-left: 1.5rem;
+    header {
+        padding-left: 1.5rem;
+
     }
 
-    #callout{
-        background: url(../images/flamingo-bg.jpg);
-        position: relative;
-        background-position:center;
+    #callout {
+        background: url('../images/flamingo-bg.jpg');
+        background-position: center;
         background-repeat: no-repeat;
-        background-size:cover;
-        height: 90vh;
-        background-color:#F3B21A;
+        background-size: cover;
+        height: 80vh;
     }
 
-    #callout-heading{
-        margin-top: 10px;
-        margin-left:30px;
+    #callout-heading {
+        margin-left: 30px;
     }
 
-    #callout-heading h1{
-        font-size: 60px;
+    #callout-heading h1 {
+        font-size: 3rem;
+        padding-top: 0;
+        min-width: 4rem;
     }
-    
 
     #callout img {
-        display:none;
+        display: none;
     }
 
-    #destinations h3{
-        margin-left:30px;
+    #destinations h3 {
+        margin-left: 30px;
     }
 
-    h3{
-        margin-left:30px;
+    h3 {
+        margin-left: 30px;
     }
 
-    .card img{
+    .card img {
         height: 10rem;
     }
-    
-
-
 }
