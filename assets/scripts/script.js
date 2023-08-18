@@ -7,9 +7,14 @@ const destinationResults = document.getElementById("destination-results");
 const destinationHeader = document.getElementById('destination-header');
 const destinationCards = document.getElementById('destination-results').innerHTML;
 const userInputCity = document.getElementById("city");
+const userInputCountry = document.getElementById('country');
 const searchButton = document.getElementById('submit-search');
 const searchForm = document.getElementById("search-form");
 const cityValue = document.getElementById('city').innerHTML;
+const countryValue = document.getElementById('country').value;
+
+let allCountries = [];
+let allCitiesOfCountry = [];
 
 
 //XHR request to get api data
@@ -25,10 +30,6 @@ function getData(cb, baseURL) {
     }
   };
 };
-
-
-let allCountries = [];
-let allCitiesOfCountry = [];
 
 // Get country names from api
 function getCountryNames(data) {
@@ -51,7 +52,6 @@ function getCountryNames(data) {
 };
 
 getData(getCountryNames, baseCountryUrl);
-
 
 // get city Names
 function getCityNames(data) {
@@ -79,10 +79,10 @@ function getCityNames(data) {
 
 //On form change check if form is valid and get user input value
 const formValidationCheck = document.getElementById("country").addEventListener("change", function () {
-  const userInputCountry = document.getElementById("country").value;
+  const countryValue = document.getElementById("country").value;
 
   // populate the select element with options
-  const countryCode = allCountries.find((country) => country.countryName === userInputCountry).countryCode;
+  const countryCode = allCountries.find((country) => country.countryName === countryValue).countryCode;
 
   if (this.checkValidity()) {
     // check if user input is in the array of countries
@@ -99,9 +99,6 @@ const formValidationCheck = document.getElementById("country").addEventListener(
   };
 });
 
-
-// --------------------------------------------------------
-
 // get token for amadeus api
 const getToken = async () => {
   const amadeusUrl = "https://test.api.amadeus.com/v1/security/oauth2/token";
@@ -117,8 +114,6 @@ const getToken = async () => {
   const amadeusData = await amadeusResponse.json();
   return amadeusData.access_token;
 };
-
-
 
 // get location of attractions
 const attractionLocations = async (lat, long) => {
@@ -144,6 +139,8 @@ const amadeusFetch = function (event) {
   // Change header to name of city
   destinationHeader.innerHTML = document.getElementById('city').value;
   searchButton.disabled = true;
+  userInputCity.disabled = true;
+  userInputCountry.disabled = true;
 
   const city = event.target.city.value;
   const latitude = event.target.city[0].dataset.lat;
@@ -182,17 +179,16 @@ const amadeusFetch = function (event) {
 
 searchForm.addEventListener("submit", amadeusFetch);
 
-
 //clear search button actions
 document.getElementById('clear-search').onclick = (function () {
   destinationHeader.innerHTML = 'Popular Destinations';
   document.getElementById('search-form').reset();
   searchButton.disabled = false;
-  destinationResults.innerHTML = destinationCards; 
+  destinationResults.innerHTML = destinationCards;
   userInputCity.innerHTML = cityValue;
   allCitiesOfCountry = [];
   allCountries = [];
   getData(getCountryNames, baseCountryUrl);
+  userInputCity.disabled = true;
+  userInputCountry.disabled = true;
 });
-
-// module.exports = formValidationCheck;
