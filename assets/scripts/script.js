@@ -164,7 +164,6 @@ const amadeusFetch = function (event) {
       data.forEach((activity) => {
         destinationResults.insertAdjacentHTML("beforeend", `<div class="col">
           <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Sleeping_Beauty_Castle_2019.jpg/375px-Sleeping_Beauty_Castle_2019.jpg" class="card-img-top img-fluid" alt="Disneyland America">
             <div class="card-body">
               <h5 class="card-title">${activity.name}</h5>
               <p class="card-text">${activity.category}</p>
