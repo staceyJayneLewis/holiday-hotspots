@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search form that displays results of your nearest attractions">
+  <meta name="keywords" content="travel, attractions, destination, hotspots, points of interest">
+  <meta name="author" content="Stacey Jayne Lewis">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -12,96 +15,111 @@
 </head>
 
 <body>
-  <section id="callout">
-    <header>
-      <h2>Holiday Hotspots</h2>
-    </header>
-    <!-- Main section with search bar -->
-    <div id="callout-heading" class="col-12 col-md-6 px-3 pb-4">
-      <h1>Explore your nearest holiday attractions in..</h1>
-      <!-- Form input -->
-      <form id="search-form">
-        <p>Please scroll to see the most popular attractions or use the form below to search for attractions at a specific city.</p>
-        <div class="form-group pt-2">
-          <label for="country">Which is your country of choice?</label>
-          <select name="country" id="country" class="form-control" required>
-            <option value="">Select a country</option>
-          </select>
-          <small id="destination" class="form-text text-muted">*required</small>
-        </div>
-        <div class="form-group pt-4">
-          <label for="city">Which city would you like to visit?</label>
-          <select name="city" id="city" class="form-control" required>
-            <option value="">Select a city</option>
-          </select>
-          <small id="destination" class="form-text text-muted">*required</small>
-        </div>
-        <input type="submit" value="Search" id="submit-search" class="btn btn-submit mt-4" />
-        <input id="clear-search" type="reset" value="Clear Search" class="btn btn-outline-dark ml-3 mt-4" />
-      </form>
-    </div>
-    <img src="./assets/images/mobile-flam.jpg">
-  </section>
+  <header>
+    <span>Holiday Hotspots</span>
+  </header>
+     <!-- Main section with search form -->
+  <main>
+    <section id="callout">
+      <div id="callout-heading" class="col-12 col-md-6 px-3 pb-4">
+        <h1>Explore your nearest holiday attractions in..</h1>
+        <!-- Form input -->
+        <form id="search-form">
+          <p>Please scroll to see the most popular attractions or use the form below to search for attractions at a
+            specific city.</p>
+          <div class="form-group pt-2">
+            <label for="country">Which is your country of choice?</label>
+            <select name="country" id="country" class="form-control" required>
+              <option value="">Select a country</option>
+            </select>
+            <small id="destination" class="form-text text-muted">*required</small>
+          </div>
+          <div class="form-group pt-4">
+            <label for="city">Which city would you like to visit?</label>
+            <select name="city" id="city" class="form-control" required>
+              <option value="">Select a city</option>
+            </select>
+            <small id="destination" class="form-text text-muted">*required</small>
+          </div>
+          <input type="submit" value="Search" id="submit-search" class="btn btn-submit mt-4" />
+          <input id="clear-search" type="reset" value="Clear Search" class="btn btn-outline-dark ml-3 mt-4" />
+        </form>
+      </div>
+      <img src="./assets/images/mobile-flam.jpg">
+    </section>
 
-
-  <!-- Cards with results of destinations -->
-  <section id="destinations" class="mt-4">
-    <h3 id="destination-header">Popular Attractions</h3>
-    <div class="container-fluid p-4">
-      <div id="destination-results" class="row row-cols-1 row-cols-md-4 row-cols-lg-5 g-3 gy-5">
-        <div class="col">
-          <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Sleeping_Beauty_Castle_2019.jpg/375px-Sleeping_Beauty_Castle_2019.jpg" class="card-img-top img-fluid" alt="Disneyland America">
-            <div class="card-body">
-              <h5 class="card-title">Disneyland America</h5>
-              <p class="card-text">SIGHTS</p>
-              <a href="https://www.google.co.uk/search?q=disneyland&sca_esv=557255143&sxsrf=AB5stBgOXT0qKd6vsMLIQGWmoV4dUSDMgw%3A1692143787724&ei=qxDcZMrsK5OphbIPkN67mAk&ved=0ahUKEwiK7oDr7t-AAxWTVEEAHRDvDpMQ4dUDCBA&uact=5&oq=disneyland&gs_lp=Egxnd3Mtd2l6LXNlcnAiCmRpc25leWxhbmQyBBAjGCcyFhAuGIAEGBQYhwIYsQMYgwEYxwEYrwEyCBAAGIoFGJECMgsQABiKBRixAxiRAjIIEAAYigUYkQIyCBAAGIoFGJECMhAQABiABBgUGIcCGLEDGIMBMgsQABiABBixAxiDATIIEAAYgAQYsQMyCxAAGIAEGLEDGIMBSLoYUMEEWLkWcAF4AZABAJgB0QOgAYEXqgEJMy44LjIuMS4yuAEDyAEA-AEBwgIKEAAYRxjWBBiwA8ICCBAAGIoFGIYDwgIKEAAYgAQYFBiHAsICBRAAGIAEwgILEC4YgAQYxwEYrwHCAg4QABiKBRixAxiDARiRAsICDRAAGIAEGBQYhwIYsQPCAgUQLhiABOIDBBgAIEGIBgGQBgg&sclient=gws-wiz-serp" class="btn btn-warning" target="_blank">Read More</a>
+    <!-- Cards with results of destinations -->
+    <section id="destinations">
+      <h3 id="destination-header">Popular Attractions</h3>
+      <div class="container-fluid p-4">
+        <div id="destination-results" class="row row-cols-1 row-cols-md-4 row-cols-lg-5 g-3 gy-5">
+          <div class="col">
+            <div class="card">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Sleeping_Beauty_Castle_2019.jpg/375px-Sleeping_Beauty_Castle_2019.jpg"
+                class="card-img-top img-fluid" alt="Disneyland America">
+              <div class="card-body">
+                <h5 class="card-title">Disneyland America</h5>
+                <p class="card-text">SIGHTS</p>
+                <a href="https://www.google.co.uk/search?q=disneyland&sca_esv=557255143&sxsrf=AB5stBgOXT0qKd6vsMLIQGWmoV4dUSDMgw%3A1692143787724&ei=qxDcZMrsK5OphbIPkN67mAk&ved=0ahUKEwiK7oDr7t-AAxWTVEEAHRDvDpMQ4dUDCBA&uact=5&oq=disneyland&gs_lp=Egxnd3Mtd2l6LXNlcnAiCmRpc25leWxhbmQyBBAjGCcyFhAuGIAEGBQYhwIYsQMYgwEYxwEYrwEyCBAAGIoFGJECMgsQABiKBRixAxiRAjIIEAAYigUYkQIyCBAAGIoFGJECMhAQABiABBgUGIcCGLEDGIMBMgsQABiABBixAxiDATIIEAAYgAQYsQMyCxAAGIAEGLEDGIMBSLoYUMEEWLkWcAF4AZABAJgB0QOgAYEXqgEJMy44LjIuMS4yuAEDyAEA-AEBwgIKEAAYRxjWBBiwA8ICCBAAGIoFGIYDwgIKEAAYgAQYFBiHAsICBRAAGIAEwgILEC4YgAQYxwEYrwHCAg4QABiKBRixAxiDARiRAsICDRAAGIAEGBQYhwIYsQPCAgUQLhiABOIDBBgAIEGIBgGQBgg&sclient=gws-wiz-serp"
+                  class="btn btn-warning" target="_blank">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://cdn.britannica.com/82/183382-050-D832EC3A/Detail-head-crown-Statue-of-Liberty-New.jpg"
+                class="card-img-top img-fluid" alt="Statue of Liberty">
+              <div class="card-body">
+                <h5 class="card-title">Statue of Liberty</h5>
+                <p class="card-text">SIGHTS</p>
+                <a href="https://www.google.co.uk/search?q=Statue+of+Liberty&sca_esv=557255143&cs=1&biw=1396&bih=679&sxsrf=AB5stBjnpGWezh3Ontuube3VrxD7ITfn3Q%3A1692143494605&ei=hg_cZPnMJNKshbIPyseQ8As&ved=0ahUKEwj5p57f7d-AAxVSVkEAHcojBL4Q4dUDCBA&uact=5&oq=Statue+of+Liberty&gs_lp=Egxnd3Mtd2l6LXNlcnAiEVN0YXR1ZSBvZiBMaWJlcnR5MgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABiKBRiwAxhDMgoQABiKBRiwAxhDMgoQABiKBRiwAxhDMgoQABiKBRiwAxhDMg4QABjkAhjWBBiwA9gBATIOEAAY5AIY1gQYsAPYAQEyDhAAGOQCGNYEGLAD2AEBMhYQLhiKBRjHARivARjIAxiwAxhD2AECMhAQLhiKBRjIAxiwAxhD2AECMhAQLhiKBRjIAxiwAxhD2AECSIADUABYAHABeAGQAQCYAQCgAQCqAQC4AQPIAQDiAwQYACBBiAYBkAYSugYGCAEQARgJugYGCAIQARgI&sclient=gws-wiz-serp"
+                  class="btn btn-warning" target="_blank">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/The_Great_Clock_following_restoration_-_May_2022_%2852120750076%29.png/1280px-The_Great_Clock_following_restoration_-_May_2022_%2852120750076%29.png"
+                class="card-img-top img-fluid" alt="Big Ben">
+              <div class="card-body">
+                <h5 class="card-title">Big Ben</h5>
+                <p class="card-text">SIGHTS</p>
+                <a href="https://www.google.co.uk/search?q=big+ben&sca_esv=557255143&sxsrf=AB5stBjI_i_CMs_XpY7v0Eywy5wJd780Ew%3A1692144496221&ei=cBPcZJyADab87_UP9LW30As&ved=0ahUKEwic-Ou88d-AAxUm_rsIHfTaDboQ4dUDCBA&uact=5&oq=big+ben&gs_lp=Egxnd3Mtd2l6LXNlcnAiB2JpZyBiZW4yERAuGK8BGMcBGLEDGIoFGJECMggQABiKBRiRAjIIEAAYigUYkQIyDRAuGIoFGMcBGK8BGEMyCBAAGIAEGLEDMggQABiABBixAzILEAAYgAQYsQMYgwEyBRAAGIAEMgUQABiABDIFEAAYgAQyIBAuGK8BGMcBGLEDGIoFGJECGJcFGNwEGN4EGOAE2AEBSLkeUKgRWLEccAV4AZABAJgB3gKgAeELqgEHMS4yLjIuMrgBA8gBAPgBAcICChAAGEcY1gQYsAPCAgcQIxiKBRgnwgIOEC4YigUYxwEYrwEYkQLCAhEQLhiABBixAxiDARjHARjRA8ICCxAAGIoFGLEDGIMBwgILEC4YgAQYxwEYrwHCAgQQIxgnwgIHEAAYigUYQ8ICDRAuGIoFGLEDGIMBGEPCAgcQLhiKBRhDwgITEC4YigUYsQMYgwEYxwEY0QMYQ8ICDRAuGIoFGMcBGNEDGEPCAhcQLhiDARivARjHARixAxiABBiYBRiZBcICERAuGIMBGMcBGLEDGNEDGIAEwgINEC4YgwEYsQMYigUYQ8ICFBAuGIAEGLEDGIMBGMcBGK8BGJgF4gMEGAAgQYgGAZAGCLoGBggBEAEYFA&sclient=gws-wiz-serp"
+                  class="btn btn-warning" target="_blank">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/1280px-Colosseo_2020.jpg"
+                class="card-img-top img-fluid" alt="Colosseum">
+              <div class="card-body">
+                <h5 class="card-title">Colosseum</h5>
+                <p class="card-text">SIGHTS</p>
+                <a href="" class="btn btn-warning" target="_blank">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/View_of_the_Grand_Canal_from_Rialto_to_Ca%27Foscari.jpg/1920px-View_of_the_Grand_Canal_from_Rialto_to_Ca%27Foscari.jpg"
+                class="card-img-top img-fluid" alt="Grand canal">
+              <div class="card-body">
+                <h5 class="card-title">Grand Canal</h5>
+                <p class="card-text">SIGHTS</p>
+                <a href="https://www.google.co.uk/search?q=The+Grand+Canal+in+Venice&sca_esv=557255143&sxsrf=AB5stBhGCZeiEkcOgEo-MTK7XFLA6FP4xA%3A1692144652215&source=hp&ei=DBTcZPrYCZ60hbIPiOaAgAU&iflsig=AD69kcEAAAAAZNwiHL6wfJq9FqeiyJMNjhxCfusg9Td3&ved=0ahUKEwj6jpqH8t-AAxUeWkEAHQgzAFAQ4dUDCAw&uact=5&oq=The+Grand+Canal+in+Venice&gs_lp=Egdnd3Mtd2l6IhlUaGUgR3JhbmQgQ2FuYWwgaW4gVmVuaWNlMgUQLhiABDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSJEHUABYAHAAeACQAQCYAWWgAWWqAQMwLjG4AQPIAQD4AQL4AQE&sclient=gws-wiz"
+                  class="btn btn-warning" target="_blank">Read More</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card">
-            <img src="https://cdn.britannica.com/82/183382-050-D832EC3A/Detail-head-crown-Statue-of-Liberty-New.jpg" class="card-img-top img-fluid" alt="Statue of Liberty">
-            <div class="card-body">
-              <h5 class="card-title">Statue of Liberty</h5>
-              <p class="card-text">SIGHTS</p>
-              <a href="https://www.google.co.uk/search?q=Statue+of+Liberty&sca_esv=557255143&cs=1&biw=1396&bih=679&sxsrf=AB5stBjnpGWezh3Ontuube3VrxD7ITfn3Q%3A1692143494605&ei=hg_cZPnMJNKshbIPyseQ8As&ved=0ahUKEwj5p57f7d-AAxVSVkEAHcojBL4Q4dUDCBA&uact=5&oq=Statue+of+Liberty&gs_lp=Egxnd3Mtd2l6LXNlcnAiEVN0YXR1ZSBvZiBMaWJlcnR5MgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABhHGNYEGLADMgoQABiKBRiwAxhDMgoQABiKBRiwAxhDMgoQABiKBRiwAxhDMgoQABiKBRiwAxhDMg4QABjkAhjWBBiwA9gBATIOEAAY5AIY1gQYsAPYAQEyDhAAGOQCGNYEGLAD2AEBMhYQLhiKBRjHARivARjIAxiwAxhD2AECMhAQLhiKBRjIAxiwAxhD2AECMhAQLhiKBRjIAxiwAxhD2AECSIADUABYAHABeAGQAQCYAQCgAQCqAQC4AQPIAQDiAwQYACBBiAYBkAYSugYGCAEQARgJugYGCAIQARgI&sclient=gws-wiz-serp" class="btn btn-warning" target="_blank">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/The_Great_Clock_following_restoration_-_May_2022_%2852120750076%29.png/1280px-The_Great_Clock_following_restoration_-_May_2022_%2852120750076%29.png" class="card-img-top img-fluid" alt="Big Ben">
-            <div class="card-body">
-              <h5 class="card-title">Big Ben</h5>
-              <p class="card-text">SIGHTS</p>
-              <a href="https://www.google.co.uk/search?q=big+ben&sca_esv=557255143&sxsrf=AB5stBjI_i_CMs_XpY7v0Eywy5wJd780Ew%3A1692144496221&ei=cBPcZJyADab87_UP9LW30As&ved=0ahUKEwic-Ou88d-AAxUm_rsIHfTaDboQ4dUDCBA&uact=5&oq=big+ben&gs_lp=Egxnd3Mtd2l6LXNlcnAiB2JpZyBiZW4yERAuGK8BGMcBGLEDGIoFGJECMggQABiKBRiRAjIIEAAYigUYkQIyDRAuGIoFGMcBGK8BGEMyCBAAGIAEGLEDMggQABiABBixAzILEAAYgAQYsQMYgwEyBRAAGIAEMgUQABiABDIFEAAYgAQyIBAuGK8BGMcBGLEDGIoFGJECGJcFGNwEGN4EGOAE2AEBSLkeUKgRWLEccAV4AZABAJgB3gKgAeELqgEHMS4yLjIuMrgBA8gBAPgBAcICChAAGEcY1gQYsAPCAgcQIxiKBRgnwgIOEC4YigUYxwEYrwEYkQLCAhEQLhiABBixAxiDARjHARjRA8ICCxAAGIoFGLEDGIMBwgILEC4YgAQYxwEYrwHCAgQQIxgnwgIHEAAYigUYQ8ICDRAuGIoFGLEDGIMBGEPCAgcQLhiKBRhDwgITEC4YigUYsQMYgwEYxwEY0QMYQ8ICDRAuGIoFGMcBGNEDGEPCAhcQLhiDARivARjHARixAxiABBiYBRiZBcICERAuGIMBGMcBGLEDGNEDGIAEwgINEC4YgwEYsQMYigUYQ8ICFBAuGIAEGLEDGIMBGMcBGK8BGJgF4gMEGAAgQYgGAZAGCLoGBggBEAEYFA&sclient=gws-wiz-serp" class="btn btn-warning" target="_blank">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/1280px-Colosseo_2020.jpg" class="card-img-top img-fluid" alt="Colosseum">
-            <div class="card-body">
-              <h5 class="card-title">Colosseum</h5>
-              <p class="card-text">SIGHTS</p>
-              <a href="" class="btn btn-warning" target="_blank">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/View_of_the_Grand_Canal_from_Rialto_to_Ca%27Foscari.jpg/1920px-View_of_the_Grand_Canal_from_Rialto_to_Ca%27Foscari.jpg" class="card-img-top img-fluid" alt="Grand canal">
-            <div class="card-body">
-              <h5 class="card-title">Grand Canal</h5>
-              <p class="card-text">SIGHTS</p>
-              <a href="https://www.google.co.uk/search?q=The+Grand+Canal+in+Venice&sca_esv=557255143&sxsrf=AB5stBhGCZeiEkcOgEo-MTK7XFLA6FP4xA%3A1692144652215&source=hp&ei=DBTcZPrYCZ60hbIPiOaAgAU&iflsig=AD69kcEAAAAAZNwiHL6wfJq9FqeiyJMNjhxCfusg9Td3&ved=0ahUKEwj6jpqH8t-AAxUeWkEAHQgzAFAQ4dUDCAw&uact=5&oq=The+Grand+Canal+in+Venice&gs_lp=Egdnd3Mtd2l6IhlUaGUgR3JhbmQgQ2FuYWwgaW4gVmVuaWNlMgUQLhiABDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSJEHUABYAHAAeACQAQCYAWWgAWWqAQMwLjG4AQPIAQD4AQL4AQE&sclient=gws-wiz" class="btn btn-warning" target="_blank">Read More</a>
-            </div>
-          </div>
-        </div>
-        </div>
-    </div>
-  </section>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer with links -->
   <footer>
@@ -112,7 +130,7 @@
       </li>
       <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
       </li>
-      <li><i class="fa-solid fa-phone"></i></li>
+      <li><a href="https://www.googlemail.com/" target="_blank"><i class="fa-solid fa-envelope"></i></a></li>
     </ul>
   </footer>
 
