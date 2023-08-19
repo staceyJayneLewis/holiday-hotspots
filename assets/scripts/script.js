@@ -12,6 +12,7 @@ const searchButton = document.getElementById('submit-search');
 const searchForm = document.getElementById("search-form");
 const cityValue = document.getElementById('city').innerHTML;
 const countryValue = document.getElementById('country').value;
+const clearSearch = document.getElementById('clear-search');
 
 let allCountries = [];
 let allCitiesOfCountry = [];
@@ -55,18 +56,13 @@ getData(getCountryNames, baseCountryUrl);
 
 // get city Names
 function getCityNames(data) {
-  console.log(data);
   const cityNames = data.geonames;
-  console.log(cityNames);
 
   //loop through the array of cities and display the city name
   for (let i = 0; i < cityNames.length; i++) {
     const city = cityNames[i].name;
     const lng = cityNames[i].lng;
     const lat = cityNames[i].lat;
-    console.log(city);
-    console.log(lng);
-    console.log(lat);
     allCitiesOfCountry.push({
       name: cityNames[i].name,
       lng: cityNames[i].lng,
@@ -87,14 +83,8 @@ const formValidationCheck = document.getElementById("country").addEventListener(
   if (this.checkValidity()) {
     // check if user input is in the array of countries
     if (countryCode) {
-      console.log("country found");
       baseCityUrl = 'https://secure.geonames.org/searchJSON?username=staceylewis&country=' + countryCode + '&maxRows=1000&style=SHORT';
       getData(getCityNames, baseCityUrl);
-    } else {
-      console.log("country not found");
-    }
-    if (userInputCity === "") {
-      console.log("please enter a city");
     }
   };
 });
@@ -127,8 +117,6 @@ const attractionLocations = async (lat, long) => {
     headers: amadeusHeaders,
   });
   const amadeusData = await amadeusResponse.json();
-  console.log(amadeusData);
-  console.log(amadeusData.data);
   return amadeusData.data;
 };
 
@@ -141,12 +129,12 @@ const amadeusFetch = function (event) {
   searchButton.disabled = true;
   userInputCity.disabled = true;
   userInputCountry.disabled = true;
+  clearSearch.classList.add("active-bg");
 
   const city = event.target.city.value;
   const latitude = event.target.city[0].dataset.lat;
   const longitude = event.target.city[0].dataset.lng;
   const clearResults = destinationResults.innerHTML = "";
-  console.log(longitude);
 
   if (city === "") {
     // please enter a city
@@ -162,7 +150,7 @@ const amadeusFetch = function (event) {
         destinationResults.insertAdjacentHTML("beforeend", `<div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">${activity.name}</h5>
+              <p class="card-title">${activity.name}</p>
               <p class="card-text">${activity.category}</p>
               <a href="https://www.google.co.uk/search?q=${activity.name}" class="btn btn-warning" target="_blank">Read More</a>
             </div>
@@ -170,7 +158,6 @@ const amadeusFetch = function (event) {
         </div>`);
       });
     } else {
-      console.log('no activities found');
       // error message
       clearResults;
     }
@@ -180,15 +167,16 @@ const amadeusFetch = function (event) {
 searchForm.addEventListener("submit", amadeusFetch);
 
 //clear search button actions
-document.getElementById('clear-search').onclick = (function () {
+clearSearch.onclick = (function () {
   destinationHeader.innerHTML = 'Popular Destinations';
-  document.getElementById('search-form').reset();
+  searchForm.reset();
   searchButton.disabled = false;
   destinationResults.innerHTML = destinationCards;
   userInputCity.innerHTML = cityValue;
   allCitiesOfCountry = [];
   allCountries = [];
   getData(getCountryNames, baseCountryUrl);
-  userInputCity.disabled = true;
-  userInputCountry.disabled = true;
+  userInputCity.disabled = false;
+  userInputCountry.disabled = false;
+  clearSearch.classList.remove("active-bg");
 });
