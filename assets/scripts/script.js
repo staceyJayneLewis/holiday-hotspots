@@ -13,12 +13,16 @@ const searchForm = document.getElementById("search-form");
 const cityValue = document.getElementById('city').innerHTML;
 const countryValue = document.getElementById('country').value;
 const clearSearch = document.getElementById('clear-search');
+const errorMessage = document.getElementById('error-message');
 
 let allCountries = [];
 let allCitiesOfCountry = [];
 
 
-//XHR request to get api data
+/*
+XHR request to get api data
+from the geonames site
+*/
 function getData(cb, baseURL) {
   var xhr = new XMLHttpRequest();
 
@@ -32,7 +36,10 @@ function getData(cb, baseURL) {
   };
 };
 
-// Get country names from api
+/* Get country names from api
+and push into allCountries array
+and add each one into option dropdowns
+*/
 function getCountryNames(data) {
   const countryNames = data.geonames;
 
@@ -54,7 +61,10 @@ function getCountryNames(data) {
 
 getData(getCountryNames, baseCountryUrl);
 
-// get city Names
+/*retrieves city names for selected
+country which are then listed as
+options in dropdown
+*/
 function getCityNames(data) {
   const cityNames = data.geonames;
 
@@ -69,11 +79,11 @@ function getCityNames(data) {
       lat: cityNames[i].lat,
     });
   }
-
   document.getElementById("city").innerHTML = allCitiesOfCountry.map((city) => `<option data-lat="${city.lat}" data-lng="${city.lng}" value="${city.name}">${city.name}</option>`).join("");
 };
 
-//On form change check if form is valid and get user input value
+/*When form is changed check if form 
+is valid and get user input value */
 const formValidationCheck = document.getElementById("country").addEventListener("change", function () {
   const countryValue = document.getElementById("country").value;
 
@@ -89,7 +99,10 @@ const formValidationCheck = document.getElementById("country").addEventListener(
   };
 });
 
-// get token for amadeus api
+/* get token for amadeus api
+to retreive data on attractions
+for selected city
+*/
 const getToken = async () => {
   const amadeusUrl = "https://test.api.amadeus.com/v1/security/oauth2/token";
   const amadeusHeaders = {
@@ -105,7 +118,7 @@ const getToken = async () => {
   return amadeusData.access_token;
 };
 
-// get location of attractions
+/* get location of attractions */
 const attractionLocations = async (lat, long) => {
 
   const amadeusUrl = `https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=${lat}&longitude=${long}&radius=5`;
@@ -120,7 +133,8 @@ const attractionLocations = async (lat, long) => {
   return amadeusData.data;
 };
 
-// send fetch request to api
+/* send fetch request to api
+and display attractions*/
 const amadeusFetch = function (event) {
   event.preventDefault();
 
@@ -131,14 +145,9 @@ const amadeusFetch = function (event) {
   userInputCountry.disabled = true;
   clearSearch.classList.add("active-bg");
 
-  const city = event.target.city.value;
   const latitude = event.target.city[0].dataset.lat;
   const longitude = event.target.city[0].dataset.lng;
   const clearResults = destinationResults.innerHTML = "";
-
-  if (city === "") {
-    // please enter a city
-  };
 
   // get the latitude and longitude
   attractionLocations(latitude, longitude).then((data) => {
@@ -156,17 +165,20 @@ const amadeusFetch = function (event) {
             </div>
           </div>
         </div>`);
-      });
+      })
     } else {
-      // error message
       clearResults;
-    }
+      //error Message
+      errorMessage.insertAdjacentHTML("afterend", `<div class="container alert alert-warning" role = "alert"><p class="text-center"><strong>Sorry!</strong> We are unable to provide information for <strong>${userInputCity.value}</strong>, please try another city.</p></div>`);
+    };
   });
 };
 
 searchForm.addEventListener("submit", amadeusFetch);
 
-//clear search button actions
+/*clear search button actions
+to reset form and results back to
+its original state*/
 clearSearch.onclick = (function () {
   destinationHeader.innerHTML = 'Popular Destinations';
   searchForm.reset();
@@ -179,4 +191,5 @@ clearSearch.onclick = (function () {
   userInputCity.disabled = false;
   userInputCountry.disabled = false;
   clearSearch.classList.remove("active-bg");
+  errorMessage.hidden = true;
 });
