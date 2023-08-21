@@ -112,7 +112,7 @@ form input {
 }
 
 .card {
-    border: 1px solid #E54575;
+    border: 2px solid #E54575;
 }
 
 .card img {
@@ -123,6 +123,25 @@ form input {
 .card-title {
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+#back-to-top {
+    width:100%;
+    text-align: center;
+}
+
+#back-to-top a {
+    font-family: 'Poppins', cursive;
+    color:black;
+    font-weight: 400;
+}
+
+#back-to-top a:hover {
+    color:#E54575;
+}
+
+#back-to-top i {
+    margin-left: 5px;
 }
 
 /* Footer */
@@ -218,5 +237,9 @@ footer {
 
     .card-title {
         font-size: 1.5vw;
+    }
+
+    #back-to-top {
+        width:100%;
     }
 }
