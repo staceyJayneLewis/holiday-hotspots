@@ -1,7 +1,7 @@
 const baseCountryUrl = "https://secure.geonames.org/countryInfoJSON?username=staceylewis";
 
-const apiKey = "wGJuUulJvwhdYGEVjJZpGOZk87efZApG";
-const apiSecret = "6Zw2nbDOVPrXjGAS";
+const apiKey = "z8CK7o1mIVUPGWGYABpztoNBVsBEDp7h";
+const apiSecret = "KzlABqAhDJGi3IHj";
 
 const destinationResults = document.getElementById("destination-results");
 const destinationHeader = document.getElementById('destination-header');
