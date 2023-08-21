@@ -14,10 +14,10 @@ const cityValue = document.getElementById('city').innerHTML;
 const countryValue = document.getElementById('country').value;
 const clearSearch = document.getElementById('clear-search');
 const errorMessage = document.getElementById('error-message');
+const hideArrow = document.querySelector('.arrow').hidden = true;
 
 let allCountries = [];
 let allCitiesOfCountry = [];
-
 
 /*
 XHR request to get api data
@@ -144,6 +144,7 @@ const amadeusFetch = function (event) {
   userInputCity.disabled = true;
   userInputCountry.disabled = true;
   clearSearch.classList.add("active-bg");
+  document.querySelector('.arrow').hidden = false;
 
   const latitude = event.target.city[0].dataset.lat;
   const longitude = event.target.city[0].dataset.lng;
@@ -169,7 +170,8 @@ const amadeusFetch = function (event) {
     } else {
       clearResults;
       //error Message
-      errorMessage.insertAdjacentHTML("afterend", `<div class="container alert alert-warning" role = "alert"><p class="text-center"><strong>Sorry!</strong> We are unable to provide information for <strong>${userInputCity.value}</strong>, please try another city.</p></div>`);
+      errorMessage.insertAdjacentHTML("afterend", `<div class="container insertedContent alert alert-warning" role="alert">
+      <p class="text-center"><strong>Sorry!</strong> We are unable to provide information for <strong>${userInputCity.value}</strong>, please try another city.</p></div>`);
     };
   });
 };
@@ -191,5 +193,10 @@ clearSearch.onclick = (function () {
   userInputCity.disabled = false;
   userInputCountry.disabled = false;
   clearSearch.classList.remove("active-bg");
-  errorMessage.hidden = true;
+  document.querySelector('.arrow').hidden = true;
+
+  let insertedContent = document.querySelector(".insertedContent");
+  if (insertedContent) {
+    insertedContent.parentNode.removeChild(insertedContent);
+  }
 });
