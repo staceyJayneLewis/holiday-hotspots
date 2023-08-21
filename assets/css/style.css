@@ -121,7 +121,7 @@ form input {
 }
 
 .card-title {
-    font-size: 5.5vw;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
@@ -153,8 +153,15 @@ footer {
     margin: 0 auto;
 }
 
-/* Media queries */
+/* Media queries md */
 @media (min-width: 768px) {
+    .card-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* Media queries lg */
+@media (min-width: 992px) {
     * {
         text-align: left;
     }
