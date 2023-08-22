@@ -1,14 +1,17 @@
 # HOLIDAY HOTSPOTS
 
+### About
 Holiday Hotspots is a website where users can search for attractions near their destination of choice which is refined by country and city. It has a search form and a result section which displays attractions within 5 miles radius based on the country & city user selects. Also, if user does not want to use the form as they are undecided they can alternitively scroll to see recommended and popular attractions around the world which could help them make a decision. 
 
+### Business goals
 The business goals for the site owner is to increase online presence meaning more online traffic, brand awareness and commission from advertising which could lead to oppurtunities such as partnering or being sponsored with travel agencies so user. The site is used to provide results in a manner that is visually appealing and user friendly so that the page doesn’t look overloaded with information but also clearly displays information on a variety of attractions. Why do we need a site for this? Well, with the internet being the most popular and preferred method of searchings for short breaks/holidays nowadays we need to adapt to the digital way of displaying information to target our audience.
 
+### Target Audience
 Who are the target audience? The site's target audience would be anyone of all ages that are travelling, on holiday already, or even looking for a short sightseeing break idea. How was this achieved? This was achieved by having a search function for the user to interact with to choose their destination and reveal results of nearest attractions. Also, when users visit the website they can expect to see the most popular attractions in different countries as suggestions on different attractions to visit. Also, as this website is to target a wide audience the website is responsive to most devices from mobiles to computers which means it caters for all generations no matter what preferred device is used.
 
 The value a website could bring is convenience for the users as many customers would rather use a website to search for events/attractions now and this also reflected in the survey I did on Survey Monkey (https://www.surveymonkey.com/r/VYM2FCZ) to analyze consumer opinions and behaviors and based on this research it is clear that most poeople would rather research online than in a travel agency store. Again, this is convenient for the users as you have all the attractions on one site that will guide you a relevant page with more information on that attraction when clicked.
 
-![screenshot](documentation/user-journey-workflow.jpg);
+![screenshot](documentation/user-journey-workflow.jpg)
 
 https://ui.dev/amiresponsive?url=https://staceyjaynelewis.github.io/holiday-hotspots
 
@@ -210,12 +213,12 @@ There are currently no differences with the local vs deployed website that I hav
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
 | [iStock](https://www.istockphoto.com/) | entire site | image | main background image |
-| [googleMaps] (https://www.google.com/maps) | for map section | bottom section of the page |
-| [wikipedia] (https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Sleeping_Beauty_Castle_2019.jpg/375px-Sleeping_Beauty_Castle_2019.jpg) | card images | destination results section underneath callout |
-| [wikipedia] (https://cdn.britannica.com/82/183382-050-D832EC3A/Detail-head-crown-Statue-of-Liberty-New.jpg) | card images | destination results section underneath callout |
-| [wikipedia] (https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/The_Great_Clock_following_restoration_-_May_2022_(52120750076).png/1280px-The_Great_Clock_following_restoration_-_May_2022_(52120750076).png) | card images | destination results section underneath callout |
-| [wikipedia] (https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/1280px-Colosseo_2020.jpg) | card images | destination results section underneath callout |
-| [wikipedia] (https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg/1920px-View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg) | card images | destination results section underneath callout |
+| [wikipedia](https://www.nerdwallet.com/assets/blog/wp-content/uploads/2023/05/01-LR_0912-HDR-scaled-1-1920x1152.jpg) | Disneyland America card image | destination results section underneath callout |
+| [wikipedia](https://cdn.britannica.com/82/183382-050-D832EC3A/Detail-head-crown-Statue-of-Liberty-New.jpg) | Statue of Liberty card image | destination results section underneath callout |
+| [wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/The_Great_Clock_following_restoration_-_May_2022_(52120750076).png/1280px-The_Great_Clock_following_restoration_-_May_2022_(52120750076).png) | Big Ben card image | destination results section underneath callout |
+| [wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/1280px-Colosseo_2020.jpg) | Colosseom card images | destination results section underneath callout |
+| [wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg/1920px-View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg) | Grand Canal card image | destination results section underneath callout |
+| [wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Sydney_Australia._(21339175489).jpg/1920px-Sydney_Australia._(21339175489).jpg) | Sydney Opera House card image | destination results section underneath callout |
 
 
 ### Acknowledgements
