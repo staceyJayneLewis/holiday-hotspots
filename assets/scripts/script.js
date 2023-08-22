@@ -20,9 +20,8 @@ const backToTop = document.getElementById('back-to-top').hidden = true;
 let allCountries = [];
 let allCitiesOfCountry = [];
 
-/*
-XHR request to get api data
-from the geonames site
+/** XHR request to get api data
+ * from the geonames site
 */
 function getData(cb, baseURL) {
   var xhr = new XMLHttpRequest();
@@ -37,9 +36,9 @@ function getData(cb, baseURL) {
   };
 };
 
-/* Get country names from api
-and push into allCountries array
-and add each one into option dropdowns
+/** Get country names from api
+ * and push into allCountries array
+ * and add each one into option dropdowns
 */
 function getCountryNames(data) {
   const countryNames = data.geonames;
@@ -62,9 +61,10 @@ function getCountryNames(data) {
 
 getData(getCountryNames, baseCountryUrl);
 
-/*retrieves city names for selected
-country which are then listed as
-options in dropdown
+/**
+ * retrieves city names for selected
+ * country which are then listed as
+ * options in dropdown
 */
 function getCityNames(data) {
   const cityNames = data.geonames;
@@ -83,8 +83,11 @@ function getCityNames(data) {
   document.getElementById("city").innerHTML = allCitiesOfCountry.map((city) => `<option data-lat="${city.lat}" data-lng="${city.lng}" value="${city.name}">${city.name}</option>`).join("");
 };
 
-/*When form is changed check if form 
-is valid and get user input value */
+/**
+ * When form is changed check
+ * if form is valid and get 
+ * user input value 
+ */
 const formValidationCheck = document.getElementById("country").addEventListener("change", function () {
   const countryValue = document.getElementById("country").value;
 
@@ -100,10 +103,11 @@ const formValidationCheck = document.getElementById("country").addEventListener(
   };
 });
 
-/* get token for amadeus api
-to retreive data on attractions
-for selected city
-*/
+/** 
+ * get token for amadeus api
+ * to retreive data on attractions
+ * for selected city
+ */ 
 const getToken = async () => {
   const amadeusUrl = "https://test.api.amadeus.com/v1/security/oauth2/token";
   const amadeusHeaders = {
@@ -181,9 +185,11 @@ const amadeusFetch = function (event) {
 
 searchForm.addEventListener("submit", amadeusFetch);
 
-/*clear search button actions
-to reset form and results back to
-its original state*/
+/**
+ * clear search button actions
+ * to reset form and results back to
+ * its original state
+ */
 clearSearch.onclick = (function () {
   destinationHeader.innerHTML = 'Popular Destinations';
   searchForm.reset();
