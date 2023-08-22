@@ -11,14 +11,14 @@ const userInputCountry = document.getElementById('country');
 const searchButton = document.getElementById('submit-search');
 const searchForm = document.getElementById("search-form");
 const cityValue = document.getElementById('city').innerHTML;
-const countryValue = document.getElementById('country').value;
 const clearSearch = document.getElementById('clear-search');
 const errorMessage = document.getElementById('error-message');
-const hideArrow = document.querySelector('.arrow').hidden = true;
-const backToTop = document.getElementById('back-to-top').hidden = true;
 
 let allCountries = [];
 let allCitiesOfCountry = [];
+
+document.querySelector('.arrow').hidden = true;
+document.getElementById('back-to-top').hidden = true;
 
 /** XHR request to get api data
  * from the geonames site
@@ -34,7 +34,7 @@ function getData(cb, baseURL) {
       cb(JSON.parse(this.responseText));
     }
   };
-};
+}
 
 /** Get country names from api
  * and push into allCountries array
@@ -71,24 +71,22 @@ function getCityNames(data) {
 
   //loop through the array of cities and display the city name
   for (let i = 0; i < cityNames.length; i++) {
-    const city = cityNames[i].name;
-    const lng = cityNames[i].lng;
-    const lat = cityNames[i].lat;
+
     allCitiesOfCountry.push({
       name: cityNames[i].name,
       lng: cityNames[i].lng,
       lat: cityNames[i].lat,
-    });
+    })
   }
   document.getElementById("city").innerHTML = allCitiesOfCountry.map((city) => `<option data-lat="${city.lat}" data-lng="${city.lng}" value="${city.name}">${city.name}</option>`).join("");
-};
+}
 
 /**
  * When form is changed check
  * if form is valid and get 
  * user input value 
  */
-const formValidationCheck = document.getElementById("country").addEventListener("change", function () {
+document.getElementById("country").addEventListener("change", function () {
   const countryValue = document.getElementById("country").value;
 
   // populate the select element with options
@@ -97,10 +95,10 @@ const formValidationCheck = document.getElementById("country").addEventListener(
   if (this.checkValidity()) {
     // check if user input is in the array of countries
     if (countryCode) {
-      baseCityUrl = 'https://secure.geonames.org/searchJSON?username=staceylewis&country=' + countryCode + '&maxRows=1000&style=SHORT';
+      const baseCityUrl = 'https://secure.geonames.org/searchJSON?username=staceylewis&country=' + countryCode + '&maxRows=1000&style=SHORT';
       getData(getCityNames, baseCityUrl);
     }
-  };
+  }
 });
 
 /** 
@@ -154,13 +152,13 @@ const amadeusFetch = function (event) {
 
   const latitude = event.target.city[0].dataset.lat;
   const longitude = event.target.city[0].dataset.lng;
-  const clearResults = destinationResults.innerHTML = "";
+  const clearResults = destinationResults;
 
   // get the latitude and longitude
   attractionLocations(latitude, longitude).then((data) => {
     if (data !== undefined) {
 
-      clearResults;
+      clearResults.innerHTML = "";
       document.getElementById('back-to-top').hidden = false;
 
       data.forEach((activity) => {
@@ -173,13 +171,13 @@ const amadeusFetch = function (event) {
             </div>
           </div>
         </div>`);
-      })
+      });
     } else {
-      clearResults;
+      clearResults.innerHTML = "";
       //error Message
       errorMessage.insertAdjacentHTML("afterend", `<div class="container insertedContent alert alert-warning" role="alert">
       <p class="text-center"><strong>Sorry!</strong> We are unable to provide information for <strong>${userInputCity.value}</strong>, please clear search and try another country/city.</p></div>`);
-    };
+    }
   });
 };
 
