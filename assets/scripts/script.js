@@ -15,6 +15,7 @@ const countryValue = document.getElementById('country').value;
 const clearSearch = document.getElementById('clear-search');
 const errorMessage = document.getElementById('error-message');
 const hideArrow = document.querySelector('.arrow').hidden = true;
+const backToTop = document.getElementById('back-to-top').hidden = true;
 
 let allCountries = [];
 let allCitiesOfCountry = [];
@@ -146,6 +147,7 @@ const amadeusFetch = function (event) {
   clearSearch.classList.add("active-bg");
   document.querySelector('.arrow').hidden = false;
 
+
   const latitude = event.target.city[0].dataset.lat;
   const longitude = event.target.city[0].dataset.lng;
   const clearResults = destinationResults.innerHTML = "";
@@ -155,6 +157,7 @@ const amadeusFetch = function (event) {
     if (data !== undefined) {
 
       clearResults;
+      document.getElementById('back-to-top').hidden = false;
 
       data.forEach((activity) => {
         destinationResults.insertAdjacentHTML("beforeend", `<div class="col">
@@ -171,8 +174,7 @@ const amadeusFetch = function (event) {
       clearResults;
       //error Message
       errorMessage.insertAdjacentHTML("afterend", `<div class="container insertedContent alert alert-warning" role="alert">
-      <p class="text-center"><strong>Sorry!</strong> We are unable to provide information for <strong>${userInputCity.value}</strong>, please try another city.</p></div>`);
-      document.getElementById('back-to-top').hidden = true;
+      <p class="text-center"><strong>Sorry!</strong> We are unable to provide information for <strong>${userInputCity.value}</strong>, please clear search and try another country/city.</p></div>`);
     };
   });
 };
@@ -195,7 +197,7 @@ clearSearch.onclick = (function () {
   userInputCountry.disabled = false;
   clearSearch.classList.remove("active-bg");
   document.querySelector('.arrow').hidden = true;
-  document.getElementById('back-to-top').hidden = false;
+  document.getElementById('back-to-top').hidden = true;
 
   let insertedContent = document.querySelector(".insertedContent");
   if (insertedContent) {
