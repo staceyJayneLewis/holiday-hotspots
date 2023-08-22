@@ -172,6 +172,7 @@ const amadeusFetch = function (event) {
       //error Message
       errorMessage.insertAdjacentHTML("afterend", `<div class="container insertedContent alert alert-warning" role="alert">
       <p class="text-center"><strong>Sorry!</strong> We are unable to provide information for <strong>${userInputCity.value}</strong>, please try another city.</p></div>`);
+      document.getElementById('back-to-top').hidden = true;
     };
   });
 };
@@ -194,6 +195,7 @@ clearSearch.onclick = (function () {
   userInputCountry.disabled = false;
   clearSearch.classList.remove("active-bg");
   document.querySelector('.arrow').hidden = true;
+  document.getElementById('back-to-top').hidden = false;
 
   let insertedContent = document.querySelector(".insertedContent");
   if (insertedContent) {

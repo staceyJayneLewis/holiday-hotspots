@@ -113,11 +113,11 @@ form input {
 
 .card {
     border: 2px solid #E54575;
+    height: auto;
 }
 
 .card img {
     max-width: 100%;
-    height: auto;
 }
 
 .card-title {
@@ -220,7 +220,7 @@ footer {
     .arrow {
         position:absolute;
         top: 78vh;
-        left: 25%;
+        left: 50%;
     }
 
     #destinations h2 {
@@ -236,7 +236,7 @@ footer {
     }
 
     .card-title {
-        font-size: 1.5vw;
+        font-size: 1.3vw;
     }
 
     #back-to-top {
