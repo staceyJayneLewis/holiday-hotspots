@@ -58,7 +58,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Page | Size | Screenshot | Notes |
 | --- | --- | --- | --- |
 | Home | Mobile | ![screenshot](documentation/lighthouse-mobile.jpg) | Some minor warnings |
-| Home | Desktop | ![screenshot](documentation/lighthouse-desktop.jpg) | Few warnings |
+| Home | Desktop | ![screenshot](documentation/lighthouse-desktop.jpg) | Some minor warnings |
 
 ## Defensive Programming
 
@@ -66,56 +66,32 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | Page | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
-| Home Page | | | | |
-| | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Home link in navbar | Redirection to Home page | Pass | |
-| Gallery Page | | | | |
-| | Click on Gallery link in navbar | Redirection to Gallery page | Pass | |
-| | Load gallery images | All images load as expected | Pass | |
-| Contact Page | | | | |
-| | Click on Contact link in navbar | Redirection to Contact page | Pass | |
-| | Enter first/last name | Field will accept freeform text | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter message in textarea | Field will accept freeform text | Pass | |
-| | Click the Submit button | Redirects user to form-dump | Pass | User must click 'Back' button to return |
-| Sign Up | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password (twice) | Field will only accept password format | Pass | |
-| | Click on Sign Up button | Asks user to confirm email page | Pass | Email sent to user |
-| | Confirm email | Redirects user to blank Sign In page | Pass | |
-| Log In | | | | |
-| | Click on the Login link | Redirection to Login page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password | Field will only accept password format | Pass | |
-| | Click Login button | Redirects user to home page | Pass | |
-| Log Out | | | | |
-| | Click Logout button | Redirects user to logout page | Pass | Confirms logout first |
-| | Click Confirm Logout button | Redirects user to home page | Pass | |
-| Profile | | | | |
-| | Click on Profile button | User will be redirected to the Profile page | Pass | |
-| | Click on the Edit button | User will be redirected to the edit profile page | Pass | |
-| | Click on the My Orders link | User will be redirected to the My Orders page | Pass | |
-| | Brute forcing the URL to get to another user's profile | User should be given an error | Pass | Redirects user back to own profile |
+| Callout | | | | |
+| | Country Input | Dropdown appears with list of countries when clicked | Pass | |
+| | Country Input | Displays tool tip that says 'Please select an item in a list' if search clicked but no country selected from the dropdown | Pass | |
+| | City Input | Dropdown appears with list of cities when clicked | Pass | |
+| | City Input | When a country is selected city input automatically displays first city in list  | Pass | |
+| | Search button | disables when clicked until 'clear search' is clicked | Pass | |
+| | Search button | if both inputs are valid displays search results of attractions in selected city when clicked in destinations section | Pass | |
+| | Search button | When clicked if no data for that city, display alert message in destination section of page | Pass | |
+| | Clear Search Button | resets form inputs | Pass | |
+| | Clear Search Button | clear search is disabled until search is clicked and higlights when search is clicked | Pass | |
+| | Clear Search Button | clears search results and displays original recommended destination cards | Pass | |
+| | Clear Search Button | if an alert is displayed - removes the alert once selected | Pass | |
+| | Arrow Button | when clicked moves to the attraction results section of the page | Pass | |
+| Destinations section | | | | |
+| | Popular attraction cards | 'Read more' button opens new page with related information on that city e.g big ben, disneyland etc | Pass | |
+| | Search results cards | cards 'read more' button opens new page with related information on that attraction, I tested the test data cities' attractions (paris, berlin, london, new york) | Pass | |
+| | Search results cards | cards display in responsive columns and rows | Pass | |
+| | Back to top link | Springs back to the top of the page when clicked | Pass | |
+| Footer | | | | |
+| | facebook icon link | on click opens a new page tab to facebook page | Pass | |
+| | instagram icon link | on click opens a new page tab to instagram page | Pass | |
+| | twitter icon link | on click opens a new page tab to twitter page | Pass | |
+| | email icon link | on click opens a new page tab to gmail page | Pass | |
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Repeat for all other tests, as applicable to your own site.
-The aforementioned tests are just an example of a few different project scenarios.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ## User Story Testing
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Testing user stories is actually quite simple, once you've already got the stories defined on your README.
-
-Most of your project's **features** should already align with the **user stories**,
-so this should as simple as creating a table with the user story, matching with the re-used screenshot
-from the respective feature.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 | User Story | Screenshot |
 | --- | --- |
@@ -129,7 +105,7 @@ from the respective feature.
 | As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature08.png) |
 | As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature09.png) |
 | repeat for all remaining user stories | x |
-
+ 
 ## Automated Testing
 
 I have conducted a series of automated tests on my application.
@@ -276,7 +252,8 @@ There are currently no open issues in github.
 
     ![screenshot](documentation/unfixed-bug03.png)
 
-    - Attempted fix: this is a known warning and acceptable, and my section doesn't require a header since it's dynamically added via JS.
+    - Attempted fix: this was expected as I have used bootstrap cdN and the validator does not recognise this so it will attempt to validate the bootstrap code and throw this error. 
 
-- When using the amadeus api it does not retrieve the all of the data as it is a test api. 
+- When using the amadeus api it does not retrieve the all of the data as it is a test api and if a city is not in the test data it will show an error message.
 
+- Performance?
