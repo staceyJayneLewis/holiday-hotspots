@@ -54,10 +54,10 @@ function getCountryNames(data) {
       countryName: countryNames[i].countryName,
       countryCode: countryNames[i].countryCode,
     });
-  };
+  }
   //adding options to the country select
   document.getElementById("country").innerHTML = allCountries.map((country) => `<option value="${country.countryName}">${country.countryName}</option>`).join("");
-};
+}
 
 getData(getCountryNames, baseCountryUrl);
 
@@ -76,7 +76,7 @@ function getCityNames(data) {
       name: cityNames[i].name,
       lng: cityNames[i].lng,
       lat: cityNames[i].lat,
-    })
+    });
   }
   document.getElementById("city").innerHTML = allCitiesOfCountry.map((city) => `<option data-lat="${city.lat}" data-lng="${city.lng}" value="${city.name}">${city.name}</option>`).join("");
 }
