@@ -22,7 +22,7 @@ document.getElementById('back-to-top').hidden = true;
 
 /** XHR request to get api data
  * from the geonames site
-*/
+ */
 function getData(cb, baseURL) {
   var xhr = new XMLHttpRequest();
 
@@ -39,7 +39,7 @@ function getData(cb, baseURL) {
 /** Get country names from api
  * and push into allCountries array
  * and add each one into option dropdowns
-*/
+ */
 function getCountryNames(data) {
   const countryNames = data.geonames;
 
@@ -60,7 +60,7 @@ getData(getCountryNames, baseCountryUrl);
  * retrieves city names for selected
  * country which are then listed as
  * options in dropdown
-*/
+ */
 function getCityNames(data) {
   const cityNames = data.geonames;
 
@@ -100,7 +100,7 @@ document.getElementById("country").addEventListener("change", function () {
  * get token for amadeus api
  * to retreive data on attractions
  * for selected city
- */ 
+ */
 const getToken = async () => {
   const amadeusUrl = "https://test.api.amadeus.com/v1/security/oauth2/token";
   const amadeusHeaders = {
