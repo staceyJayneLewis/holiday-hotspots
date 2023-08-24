@@ -58,7 +58,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Page | Size | Screenshot | Notes |
 | --- | --- | --- | --- |
 | Home | Mobile | ![screenshot](documentation/lighthouse-mobile.jpg) | Some minor warnings |
-| Home | Desktop | ![screenshot](documentation/lighthouse-desktop-green.jpg) | Pass - some suggested improvements |
+| Home | Desktop | ![screenshot](documentation/lighthouse-desktop-green.png) | Pass - some suggested improvements |
 
 ## Defensive Programming
 
