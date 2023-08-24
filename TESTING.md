@@ -68,7 +68,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | --- | --- | --- | --- | --- |
 | Callout | | | | |
 | | Country Input | Dropdown appears with list of countries when clicked | Pass | |
-| | Country Input | Displays tool tip that says 'Please select an item in a list' if search clicked but no country selected from the dropdown | Pass | |
+| | Country Input | Displays tooltip that says 'Please select an item in a list' if search clicked but no country selected from the dropdown | Pass | |
 | | City Input | Dropdown appears with list of cities when clicked | Pass | |
 | | City Input | When a country is selected city input automatically displays first city in list  | Pass | |
 | | Search button | disables when clicked until 'clear search' is clicked | Pass | |
@@ -317,6 +317,6 @@ There are currently no open issues in github.
 
 - Lighthouse for mobile still showing a low score of 54.
 
-    ![screenshot](documentation/lighthouse-mobile.jpg.png) 
+    ![screenshot](documentation/unfixed-bug-3.png) 
 
-    - Attempted Fix: Reducing the impact of font awesome cdn.
+    - Attempted Fix: Reducing the impact of font awesome cdn,seems like its the third party cdns used that are affecting the mobile. One recommendation says to implement changes to the server used which could help improve this however this is something I am unable do as it is not a server I pay for. 
