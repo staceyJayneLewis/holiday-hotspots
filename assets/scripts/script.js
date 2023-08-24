@@ -43,11 +43,6 @@ function getData(cb, baseURL) {
 function getCountryNames(data) {
   const countryNames = data.geonames;
 
-  allCountries.push({
-    countryName: "Select a country",
-    countryCode: "",
-  });
-
   //loop through the array of countries and display the country name
   for (let i = 0; i < countryNames.length; i++) {
     allCountries.push({
@@ -56,7 +51,7 @@ function getCountryNames(data) {
     });
   }
   //adding options to the country select
-  document.getElementById("country").innerHTML = allCountries.map((country) => `<option value="${country.countryName}">${country.countryName}</option>`).join("");
+  document.getElementById("country").innerHTML += allCountries.map((country) => `<option value="${country.countryName}">${country.countryName}</option>`).join("");
 }
 
 getData(getCountryNames, baseCountryUrl);
