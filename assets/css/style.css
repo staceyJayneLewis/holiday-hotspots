@@ -59,13 +59,13 @@ header {
 }
 
 /* Form */
-form p {
+form p,
+label {
     font-size: 18px;
 }
 
 form label {
     font-family: "Poppins", cursive, serif;
-    font-size: 18px;
     font-weight: 500;
 }
 
