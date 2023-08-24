@@ -58,7 +58,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Page | Size | Screenshot | Notes |
 | --- | --- | --- | --- |
 | Home | Mobile | ![screenshot](documentation/lighthouse-mobile.jpg) | Some minor warnings |
-| Home | Desktop | ![screenshot](documentation/lighthouse-desktop.jpg) | Some minor warnings |
+| Home | Desktop | ![screenshot](documentation/lighthouse-desktop-green.jpg) | Pass - some suggested improvements |
 
 ## Defensive Programming
 
@@ -204,7 +204,7 @@ This can be used for both "fixed" and "unresolved" issues.
     ![screenshot](documentation/bug1.png)
 
     - To fix this, I noticed I forgot to put the ../ at the start of the URL as I am currently in the CSS folder and need to go out of that folder to get back to the assets folder.
-    
+
 
 - Footer not visible as it hides behind the map element (note this bug was before I removed the map feature).
 
@@ -269,6 +269,13 @@ This can be used for both "fixed" and "unresolved" issues.
 
     - To fix this, I included  /* jshint esversion: 11 */ on the top of the jsHint programme so jsHint validator recognizes the modern ES6 methods.
 
+- Lighthouse Desktop orignially displayed a lot of warnings for performance and resulted in a score of 69.
+
+    ![screenshot](documentation/lighthouse-desktop.jpg)
+
+    - To fix this, I used the suggestions on the lighthouse developer tools which was to implement the 'preload' link in the head for the background image to load quicker, resize the images to sizes needed rather than large files and to convert all .jpg's to webp format. 
+
+
 ### GitHub **Issues**
 
 I have used github issues to manage my bugs and keep a tracker of the problem and how I solved them for the above bug noted above in the bug's section.
@@ -307,3 +314,9 @@ There are currently no open issues in github.
     ![screenshot](documentation/unfixed-bug-2.png)
 
     - Attempted Fix: I could fix this by purchasing the api for more data, however advised by mentor no need to purchase more data as the api test data for the four cities is suffice. 
+
+- Lighthouse for mobile still showing a low score of 54.
+
+    ![screenshot](documentation/lighthouse-mobile.jpg.png) 
+
+    - Attempted Fix: Reducing the impact of font awesome cdn.
