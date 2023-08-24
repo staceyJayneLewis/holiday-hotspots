@@ -1,7 +1,7 @@
 const baseCountryUrl = "https://secure.geonames.org/countryInfoJSON?username=staceylewis";
 
-const apiKey = "z8CK7o1mIVUPGWGYABpztoNBVsBEDp7h";
-const apiSecret = "KzlABqAhDJGi3IHj";
+const apiKey = "Ijx6Ydl1otEAjvpnwuQ5qDJXDl4pkBAG";
+const apiSecret = "QoOmDRbKHN1cUGk3";
 
 const destinationResults = document.getElementById("destination-results");
 const destinationHeader = document.getElementById('destination-header');
@@ -51,7 +51,7 @@ function getCountryNames(data) {
     });
   }
   //adding options to the country select
-  document.getElementById("country").innerHTML += allCountries.map((country) => `<option value="${country.countryName}">${country.countryName}</option>`).join("");
+  document.getElementById("country").innerHTML += allCountries.map((country) => `<option value="${country.countryName}">${country.countryName}</option>`).sort().join("");
 }
 
 getData(getCountryNames, baseCountryUrl);
@@ -73,6 +73,7 @@ function getCityNames(data) {
       lat: cityNames[i].lat,
     });
   }
+  allCitiesOfCountry.sort((a, b) => a.name.localeCompare(b.name))
   document.getElementById("city").innerHTML = allCitiesOfCountry.map((city) => `<option data-lat="${city.lat}" data-lng="${city.lng}" value="${city.name}">${city.name}</option>`).join("");
 }
 
@@ -171,7 +172,13 @@ const amadeusFetch = function (event) {
       clearResults.innerHTML = "";
       //error Message
       errorMessage.insertAdjacentHTML("afterend", `<div class="container insertedContent alert alert-warning" role="alert">
-      <p class="text-center"><strong>Sorry!</strong> We are unable to provide information for <strong>${userInputCity.value}</strong>, please clear search and try another country/city.</p></div>`);
+      <p class="text-center"><strong>Sorry!</strong> We are unable to provide information for <strong>${userInputCity.value}</strong>, maybe you could try one of these cities:<br>
+      Berlin<br>
+      Paris<br>
+      London<br>
+      New York</p><br>
+      <p class="text-center">Our database is always growing, please come back later for additional destinations.</p>
+      </div>`);
     }
   });
 };
