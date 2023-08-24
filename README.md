@@ -78,7 +78,6 @@ Poppins has been used for the informative text in the website with a simple styl
 
 ### Site Admin
 
-- As a site administrator, I should be able to easily add new features to the website, so that I can renew content.
 - As a site administrator, I should be able to see a well-structured script with comments, so that I can easily identify each section in the script. 
 - As a site administrator, I should be able to easily update the social media links and contact information, so that I can update it immediately for the users. 
 - As a site administrator, I should be able to see each function labelled with multi-line comments so that I understand the purpose of each function.
