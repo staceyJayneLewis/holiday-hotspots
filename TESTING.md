@@ -231,3 +231,9 @@ There are currently no open issues in github.
     ![screenshot](documentation/unfixed-bug-3.png) 
 
     - Attempted Fix: Reducing the impact of font awesome cdn,seems like its the third party cdns used that are affecting the mobile. One recommendation says to implement changes to the server used which could help improve this however this is something I am unable do as it is not a server I pay for. 
+
+- IDuring this project my amaedus API was revoked, they sent me an email to say they were revoking due to it being publicly searchable on github. The github repository that they used in the email is NOT my github and after speaking with my mentor it was agreed it looks like someone else used my API key which caused this issue. 
+
+    ![screenshot](documentation/api-email.png) 
+
+    - Attempted to fix by generating a new key and obfuscating it in my best attempt to avoid this happening again. It was advised by my mentor to make note of this one here to explain the situation that occured. You can see in this screenshot above the email that was sent.
