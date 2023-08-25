@@ -1,7 +1,11 @@
 const baseCountryUrl = "https://secure.geonames.org/countryInfoJSON?username=staceylewis";
 
-const apiKey = "Ijx6Ydl1otEAjvpnwuQ5qDJXDl4pkBAG";
-const apiSecret = "QoOmDRbKHN1cUGk3";
+var _0xde6a = [
+  '\x78\x4F\x6F\x79\x4C\x41\x64\x69\x75\x5A\x51\x53\x74\x6B\x78\x4D\x5A\x61\x77\x69\x30\x71\x6D\x37\x38\x6A\x41\x6E\x75\x78\x7A\x49',
+  '\x70\x39\x52\x73\x66\x4C\x6D\x6A\x46\x64\x62\x4D\x72\x4F\x50\x58',
+];
+const apiKey = _0xde6a[0];
+const apiSecret = _0xde6a[1];
 
 const destinationResults = document.getElementById("destination-results");
 const destinationHeader = document.getElementById('destination-header');
@@ -73,7 +77,6 @@ function getCityNames(data) {
       lat: cityNames[i].lat,
     });
   }
-  allCitiesOfCountry.sort((a, b) => a.name.localeCompare(b.name))
   document.getElementById("city").innerHTML = allCitiesOfCountry.map((city) => `<option data-lat="${city.lat}" data-lng="${city.lng}" value="${city.name}">${city.name}</option>`).join("");
 }
 
