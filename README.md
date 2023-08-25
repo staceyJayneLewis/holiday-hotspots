@@ -11,6 +11,9 @@ United States: New York
 
 (More data can be retrieved by paying for the Amadeus API - It was advised by my mentor that I do not need to pay for the API to get the data for every country, as it also shows using the API test data that the API is working). Also, I am aware that I am not to display the API secret key if it was a real world project/job. 
 
+IMPORTANT NOTE! During this project my amaedus API was revoked, they sent me an email to say they were revoking due to it being publicly searchable on github. The github repository that they used in the email is NOT my github and after speaking with my mentor it was agreed it looks like someone else used my API key which caused this issue. I have since generated a new key and obfuscated the key in my best attempt to avoid this happening again. It was advised by my mentor to make note of this one here to explain the situation that occured. I have also noted this in unfixed bugs with the screenshot of the email that was sent to me.
+
+
 ### Business goals
 The business goals for the site owner are to increase online presence meaning more online traffic, brand awareness and commission from advertising which could lead to opportunities such as partnering or being sponsored with travel agencies so user. The site is used to provide results in a manner that is visually appealing and user-friendly so that the page doesn’t look overloaded with information but also clearly displays information on a variety of attractions. Why do we need a site for this? Well, with the internet being the most popular and preferred method of searchings for short breaks/holidays nowadays we need to adapt to the digital way of displaying information to target our audience.
 
@@ -181,6 +184,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 - [amadeus](https://amadeus.com/en/topic/api) used for the api to get search results information on hotels.
 - [am i responsive](https://ui.dev/amiresponsive) used to check if website is responsive and for mockup.
 - [surveyMonkey](https://www.surveymonkey.com/r/VYM2FCZ) used to conduct a survey for consumer behaviours
+- [obfuscator](https://obfuscator.io/) used to obfuscate api key.
 
 ## Testing
 
@@ -230,7 +234,9 @@ You can fork this repository by using the following steps:
 
 ### Local VS Deployment
 
-There are currently no differences with the local vs deployed website that I have noticed.
+There are currently no differences with the local vs deployed website that I noticed on day of submission, as you can see in the screen recording below this was how it was submitted. 
+
+![screenshot](documentation/full-working.gif)
 
 ## Credits
 
@@ -263,6 +269,7 @@ There are currently no differences with the local vs deployed website that I hav
 ### Acknowledgements
 
 - I would like to thank my Code Institute mentor, [Juliia Konovalova](https://github.com/IuliiaKonovalova) for their support throughout the development of this project. Juliia went above and beyond to help me learn API's for the first time and I now feel more confident using them.
+I would like to thank Tim Nelson mentor, for the markdown template which helped form the structure of the read me and tesing.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
 - I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
 - I would like to thank my partner William, for believing in me, and allowing me to make this transition into software development and my daughter for being so patient in having less time with me due to sharing my time with doing this course.
